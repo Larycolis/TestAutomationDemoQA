@@ -1,6 +1,7 @@
-package ui.elements.webtables;
+package ui.elements;
 
 import com.github.javafaker.Faker;
+import org.base.WebDriverSetup;
 import org.entity.Employee;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -9,35 +10,29 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WebtablesTests {
-    private WebDriver driver;
+public class WebTablesTests {
+    private WebDriverSetup webDriverSetup;
     private final Faker faker = new Faker();
+    private static final String XPATH_ELEMENTS = "//div[@class='rt-tbody']/div/div[not(contains(@class, 'pad'))]";
 
     @BeforeEach
     void setUp() {
-        System.setProperty("webdriver.chrome.driver",
-                "C:\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        String path = "https://demoqa.com/webtables";
-        driver.get(path);
-        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        webDriverSetup = new WebDriverSetup();
+        webDriverSetup.setUp("https://demoqa.com/webtables");
     }
 
     @AfterEach
     void tearDown() {
-        driver.quit();
+        webDriverSetup.tearDown();
     }
 
     @Test
     void addTableLineAndCheckItInTableTest() {
+        WebDriver driver = getDriver();
         Employee employee = generateEmployee();
         driver.findElement(By.id("addNewRecordButton")).click();
         addEmployee(employee);
@@ -46,6 +41,7 @@ public class WebtablesTests {
 
     @Test
     void editTableLineAndCheckChanges() {
+        WebDriver driver = getDriver();
         Employee employee = generateEmployee();
         Employee editedEmployee = generateEmployee();
         driver.findElement(By.id("addNewRecordButton")).click();
@@ -58,6 +54,7 @@ public class WebtablesTests {
 
     @Test
     void deleteTableLineAndCheckChanges() {
+        WebDriver driver = getDriver();
         Employee employee = generateEmployee();
         driver.findElement(By.id("addNewRecordButton")).click();
         addEmployee(employee);
@@ -72,13 +69,14 @@ public class WebtablesTests {
     //over testing
     @Test
     void addTableLinesAndCheckLestLineInTableTest() {
+        WebDriver driver = getDriver();
         int employeeCount = faker.number().numberBetween(1, 7);
         List<Employee> listOfEmployee = addEmployeeToList(employeeCount);
         for (Employee tmp : listOfEmployee) {
             driver.findElement(By.id("addNewRecordButton")).click();
             addEmployee(tmp);
         }
-        int fullElementsCount = driver.findElements(By.xpath("//div[@class='rt-tbody']/div/div[not(contains(@class, 'pad'))]")).size();
+        int fullElementsCount = getSizeOfElementsList();
         List<String> actualEmployeeValues = driver.findElements(By.cssSelector("div.rt-tbody > div:nth-child(" + fullElementsCount + ") div > div")).stream()
                 .map(WebElement::getText).toList();
         Employee actualEmployee = new Employee(actualEmployeeValues.get(0), actualEmployeeValues.get(1),
@@ -94,6 +92,7 @@ public class WebtablesTests {
     }
 
     private void addEmployee(Employee employee) {
+        WebDriver driver = getDriver();
         clearAndType(By.id("firstName"), employee.getFirstName());
         clearAndType(By.id("lastName"), employee.getLastName());
         clearAndType(By.id("userEmail"), employee.getEmail());
@@ -104,22 +103,30 @@ public class WebtablesTests {
     }
 
     private void clearAndType(By locator, String value) {
+        WebDriver driver = getDriver();
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(value);
     }
 
     private Employee getEmployee() {
-        int fullElementsCount = driver.findElements(By.xpath("//div[@class='rt-tbody']/div/div[not(contains(@class, 'pad'))]")).size();
+        WebDriver driver = getDriver();
+        int fullElementsCount = getSizeOfElementsList();
         List<String> actualEmployeeValues = driver.findElements(By.cssSelector("div.rt-tbody > div:nth-child(" + fullElementsCount + ") div > div")).stream()
                 .map(WebElement::getText).toList();
         return new Employee(actualEmployeeValues.get(0), actualEmployeeValues.get(1), actualEmployeeValues.get(2), actualEmployeeValues.get(3), actualEmployeeValues.get(4), actualEmployeeValues.get(5));
     }
 
     private int getFullElementsCount() {
-        return driver.findElements(By.xpath("//div[@class='rt-tbody']/div/div[not(contains(@class, 'pad'))]")).size();
+        return getSizeOfElementsList();
+    }
+
+    private int getSizeOfElementsList() {
+        WebDriver driver = getDriver();
+        return driver.findElements(By.xpath(XPATH_ELEMENTS)).size();
     }
 
     private List<String> getFirstNames(int fullElementCountAfterDeleteLine) {
+        WebDriver driver = getDriver();
         List<String> firstNamesAfterDelete = new ArrayList<>();
         for (int i = 1; i < fullElementCountAfterDeleteLine + 1; i++) {
             firstNamesAfterDelete.add(driver.findElement(By.cssSelector("div.rt-tbody > div:nth-child(" + i + ") div > div")).getText());
@@ -133,5 +140,9 @@ public class WebtablesTests {
             list.add(generateEmployee());
         }
         return list;
+    }
+
+    private WebDriver getDriver() {
+        return webDriverSetup.getDriver();
     }
 }

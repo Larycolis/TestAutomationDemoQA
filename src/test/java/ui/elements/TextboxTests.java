@@ -1,5 +1,6 @@
-package ui.elements.textbox;
+package ui.elements;
 
+import org.base.WebDriverSetup;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,50 +11,45 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class TextboxTests {
-    private WebDriver driver;
+    private WebDriverSetup webDriverSetup;
+    private static final String USER_NAME = "userName";
+    private static final String USER_EMAIL = "userEmail";
+    private static final String CURRENT_ADDRESS = "currentAddress";
+    private static final String PERMANENT_ADDRESS = "permanentAddress";
 
     @BeforeEach
     void setUp() {
-        System.setProperty("webdriver.chrome.driver",
-                "C:\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        String path = "https://demoqa.com/text-box";
-        driver.get(path);
-        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        webDriverSetup = new WebDriverSetup();
+        webDriverSetup.setUp("https://demoqa.com/text-box");
     }
 
     @AfterEach
     void tearDown() {
-        driver.quit();
+        webDriverSetup.tearDown();
     }
 
     @ParameterizedTest
     @ValueSource(strings = {" test", "123test", "123", "i", "TEST", "$*^"})
     void fillTheFullNameFieldAndSubmitTest(String param) {
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].remove();", driver.findElement(By.id("adplus-anchor")));
-        driver.findElement(By.id("userName")).click();
-        driver.findElement(By.id("userName")).sendKeys(param);
+        WebDriver driver = getDriver();
+        JavascriptExecutor executor = getJavascriptExecutor();
+        driver.findElement(By.id(USER_NAME)).click();
+        driver.findElement(By.id(USER_NAME)).sendKeys(param);
         executor.executeScript("arguments[0].click();", driver.findElement(By.id("submit")));
         Assertions.assertEquals("Name:" + param, driver.findElement(By.id("name")).getText());
     }
 
     @Test
-    void fillTheFormAndSubmitTest() throws InterruptedException {
+    void fillTheFormAndSubmitTest() {
+        WebDriver driver = getDriver();
         String[] testDate = new String[]{"Ivan Ivanovich", "test@test.ts", "Gorkog, 1", "Lenin, 12"};
-        WebElement userName = driver.findElement(By.id("userName"));
-        WebElement userEmail = driver.findElement(By.id("userEmail"));
-        WebElement currentAddress = driver.findElement(By.id("currentAddress"));
-        WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].remove();", driver.findElement(By.id("adplus-anchor")));
+        WebElement userName = driver.findElement(By.id(USER_NAME));
+        WebElement userEmail = driver.findElement(By.id(USER_EMAIL));
+        WebElement currentAddress = driver.findElement(By.id(CURRENT_ADDRESS));
+        WebElement permanentAddress = driver.findElement(By.id(PERMANENT_ADDRESS));
+        JavascriptExecutor executor = getJavascriptExecutor();
         userName.click();
         userName.sendKeys(testDate[0]);
         userEmail.click();
@@ -69,5 +65,14 @@ public class TextboxTests {
         Assertions.assertEquals("Permananet Address :" + testDate[3], driver.findElement(By.cssSelector("p[id='permanentAddress']")).getText());
     }
 
+    private JavascriptExecutor getJavascriptExecutor() {
+        WebDriver driver = getDriver();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].remove();", driver.findElement(By.id("adplus-anchor")));
+        return executor;
+    }
 
+    private WebDriver getDriver() {
+        return webDriverSetup.getDriver();
+    }
 }

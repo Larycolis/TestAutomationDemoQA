@@ -57,17 +57,6 @@ public class Employee {
     }
 
     @Override
-    public int hashCode() {
-        int result = firstName.hashCode();
-        result = 31 * result + lastName.hashCode();
-        result = 31 * result + age.hashCode();
-        result = 31 * result + email.hashCode();
-        result = 31 * result + salary.hashCode();
-        result = 31 * result + department.hashCode();
-        return result;
-    }
-
-    @Override
     public String toString() {
         return firstName + ", " + lastName + ", " + age + ", " + email + ", " + salary + ", " + department;
     }

@@ -1,38 +1,31 @@
-package ui.elements.buttons;
+package ui.elements;
 
+import org.base.WebDriverSetup;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class ButtonsTests {
-    private WebDriver driver;
-    WebDriverWait webDriverWait;
+    private WebDriverSetup webDriverSetup;
 
     @BeforeEach
     void setUp() {
-        System.setProperty("webdriver.chrome.driver",
-                "C:\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://demoqa.com/buttons");
-        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        webDriverSetup = new WebDriverSetup();
+        webDriverSetup.setUp("https://demoqa.com/buttons");
     }
 
     @AfterEach
     void tearDown() {
-        driver.quit();
+        webDriverSetup.tearDown();
     }
 
     @Test
     void clickButtonDoubleClickMeAndCheckSelectedTest() {
+        WebDriver driver = getDriver();
         Actions action = new Actions(driver);
         action.doubleClick(driver.findElement(By.id("doubleClickBtn"))).perform();
         Assertions.assertEquals("You have done a double click", driver.findElement(By.id("doubleClickMessage")).getText());
@@ -40,6 +33,7 @@ public class ButtonsTests {
 
     @Test
     void clickButtonRightClickMeAndCheckSelectedTest() {
+        WebDriver driver = getDriver();
         Actions action = new Actions(driver);
         action.contextClick(driver.findElement(By.id("rightClickBtn"))).perform();
         Assertions.assertEquals("You have done a right click", driver.findElement(By.id("rightClickMessage")).getText());
@@ -47,7 +41,12 @@ public class ButtonsTests {
 
     @Test
     void clickButtonClickMeAndCheckSelectedTest() {
+        WebDriver driver = getDriver();
         driver.findElement(By.cssSelector("div.col-md-6 > div:nth-child(2) > div:nth-child(3) button")).click();
         Assertions.assertEquals("You have done a dynamic click", driver.findElement(By.id("dynamicClickMessage")).getText());
+    }
+
+    private WebDriver getDriver() {
+        return webDriverSetup.getDriver();
     }
 }
