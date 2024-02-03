@@ -8,7 +8,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class TextboxTests extends BaseTest {
@@ -25,22 +24,20 @@ public class TextboxTests extends BaseTest {
     @ParameterizedTest
     @ValueSource(strings = {" test", "123test", "123", "i", "TEST", "$*^"})
     void fillTheFullNameFieldAndSubmitTest(String param) {
-        WebDriver driver = getDriver();
         JavascriptExecutor executor = getJavascriptExecutor();
-        driver.findElement(By.id(USER_NAME)).click();
-        driver.findElement(By.id(USER_NAME)).sendKeys(param);
-        executor.executeScript("arguments[0].click();", driver.findElement(By.id("submit")));
-        Assertions.assertEquals("Name:" + param, driver.findElement(By.id("name")).getText());
+        getDriver().findElement(By.id(USER_NAME)).click();
+        getDriver().findElement(By.id(USER_NAME)).sendKeys(param);
+        executor.executeScript("arguments[0].click();", getDriver().findElement(By.id("submit")));
+        Assertions.assertEquals("Name:" + param, getDriver().findElement(By.id("name")).getText());
     }
 
     @Test
     void fillTheFormAndSubmitTest() {
-        WebDriver driver = getDriver();
         String[] testDate = new String[]{"Ivan Ivanovich", "test@test.ts", "Gorkog, 1", "Lenin, 12"};
-        WebElement userName = driver.findElement(By.id(USER_NAME));
-        WebElement userEmail = driver.findElement(By.id(USER_EMAIL));
-        WebElement currentAddress = driver.findElement(By.id(CURRENT_ADDRESS));
-        WebElement permanentAddress = driver.findElement(By.id(PERMANENT_ADDRESS));
+        WebElement userName = getDriver().findElement(By.id(USER_NAME));
+        WebElement userEmail = getDriver().findElement(By.id(USER_EMAIL));
+        WebElement currentAddress = getDriver().findElement(By.id(CURRENT_ADDRESS));
+        WebElement permanentAddress = getDriver().findElement(By.id(PERMANENT_ADDRESS));
         JavascriptExecutor executor = getJavascriptExecutor();
         userName.click();
         userName.sendKeys(testDate[0]);
@@ -50,17 +47,16 @@ public class TextboxTests extends BaseTest {
         currentAddress.sendKeys(testDate[2]);
         permanentAddress.click();
         permanentAddress.sendKeys(testDate[3]);
-        executor.executeScript("arguments[0].click();", driver.findElement(By.id("submit")));
-        Assertions.assertEquals("Name:" + testDate[0], driver.findElement(By.id("name")).getText());
-        Assertions.assertEquals("Email:" + testDate[1], driver.findElement(By.id("email")).getText());
-        Assertions.assertEquals("Current Address :" + testDate[2], driver.findElement(By.cssSelector("p[id='currentAddress']")).getText());
-        Assertions.assertEquals("Permananet Address :" + testDate[3], driver.findElement(By.cssSelector("p[id='permanentAddress']")).getText());
+        executor.executeScript("arguments[0].click();", getDriver().findElement(By.id("submit")));
+        Assertions.assertEquals("Name:" + testDate[0], getDriver().findElement(By.id("name")).getText());
+        Assertions.assertEquals("Email:" + testDate[1], getDriver().findElement(By.id("email")).getText());
+        Assertions.assertEquals("Current Address :" + testDate[2], getDriver().findElement(By.cssSelector("p[id='currentAddress']")).getText());
+        Assertions.assertEquals("Permananet Address :" + testDate[3], getDriver().findElement(By.cssSelector("p[id='permanentAddress']")).getText());
     }
 
     private JavascriptExecutor getJavascriptExecutor() {
-        WebDriver driver = getDriver();
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].remove();", driver.findElement(By.id("adplus-anchor")));
+        JavascriptExecutor executor = (JavascriptExecutor) getDriver();
+        executor.executeScript("arguments[0].remove();", getDriver().findElement(By.id("adplus-anchor")));
         return executor;
     }
 }

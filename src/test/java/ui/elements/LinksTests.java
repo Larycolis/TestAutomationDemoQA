@@ -8,9 +8,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LinksTests extends BaseTest {
     @BeforeEach
@@ -21,11 +19,9 @@ public class LinksTests extends BaseTest {
     @ParameterizedTest
     @ValueSource(strings = {"simpleLink", "dynamicLink"})
     void clickLinksAndCheckRelevantPageOpenedTest(String locator) {
-        WebDriver driver = getDriver();
-        WebDriverWait webDriverWait = getWebDriverWait();
-        driver.findElement(By.id(locator)).click();
-        driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
-        webDriverWait.until(ExpectedConditions.urlContains("https://demoqa.com/"));
+        getDriver().findElement(By.id(locator)).click();
+        getDriver().switchTo().window(getDriver().getWindowHandles().toArray()[1].toString());
+        getWebDriverWait().until(ExpectedConditions.urlContains("https://demoqa.com/"));
     }
 
     @ParameterizedTest
@@ -34,13 +30,11 @@ public class LinksTests extends BaseTest {
             "401, Unauthorized, unauthorized", "403, Forbidden, forbidden",
             "404, Not Found, invalid-url"})
     void clickLinksAndCheckSelectedTest(int status, String text, String id) {
-        WebDriver driver = getDriver();
-        WebDriverWait webDriverWait = getWebDriverWait();
         String expectedLinkResponse = "Link has responded with staus " + status + " and status text " + text;
         String linkResponse = "linkResponse";
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", driver.findElement(By.id(id)));
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.id(linkResponse)));
-        Assertions.assertEquals(expectedLinkResponse, driver.findElement(By.id(linkResponse)).getText());
+        JavascriptExecutor executor = (JavascriptExecutor) getDriver();
+        executor.executeScript("arguments[0].click();", getDriver().findElement(By.id(id)));
+        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.id(linkResponse)));
+        Assertions.assertEquals(expectedLinkResponse, getDriver().findElement(By.id(linkResponse)).getText());
     }
 }
