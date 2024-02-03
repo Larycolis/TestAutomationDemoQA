@@ -1,7 +1,6 @@
 package ui.mainPage;
 
-import org.base.WebDriverSetup;
-import org.junit.jupiter.api.AfterEach;
+import org.base.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,19 +15,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class MainPageTests {
-    private WebDriverSetup webDriverSetup;
+public class MainPageTests extends BaseTest {
     private final String path = "https://demoqa.com/";
 
     @BeforeEach
     void setUp() {
-        webDriverSetup = new WebDriverSetup();
-        webDriverSetup.setUp(path);
-    }
-
-    @AfterEach
-    void tearDown() {
-        webDriverSetup.tearDown();
+        getDriver().get(path);
     }
 
     //Подумать зачем этот тест и что он проверяет: Данный тест ничего не проверяет, кроме кликабельности логотипа для рефреша страницы
@@ -61,9 +53,5 @@ public class MainPageTests {
 
     private WebDriverWait getWebDriverWait(WebDriver driver) {
         return new WebDriverWait(driver, Duration.ofSeconds(5));
-    }
-
-    private WebDriver getDriver() {
-        return webDriverSetup.getDriver();
     }
 }

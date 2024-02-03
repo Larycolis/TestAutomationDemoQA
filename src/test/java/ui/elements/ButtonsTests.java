@@ -1,7 +1,6 @@
 package ui.elements;
 
-import org.base.WebDriverSetup;
-import org.junit.jupiter.api.AfterEach;
+import org.base.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,18 +8,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class ButtonsTests {
-    private WebDriverSetup webDriverSetup;
+public class ButtonsTests extends BaseTest {
 
     @BeforeEach
     void setUp() {
-        webDriverSetup = new WebDriverSetup();
-        webDriverSetup.setUp("https://demoqa.com/buttons");
-    }
-
-    @AfterEach
-    void tearDown() {
-        webDriverSetup.tearDown();
+        getDriver().get("https://demoqa.com/buttons");
     }
 
     @Test
@@ -44,9 +36,5 @@ public class ButtonsTests {
         WebDriver driver = getDriver();
         driver.findElement(By.cssSelector("div.col-md-6 > div:nth-child(2) > div:nth-child(3) button")).click();
         Assertions.assertEquals("You have done a dynamic click", driver.findElement(By.id("dynamicClickMessage")).getText());
-    }
-
-    private WebDriver getDriver() {
-        return webDriverSetup.getDriver();
     }
 }

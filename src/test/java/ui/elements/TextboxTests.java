@@ -1,7 +1,6 @@
 package ui.elements;
 
-import org.base.WebDriverSetup;
-import org.junit.jupiter.api.AfterEach;
+import org.base.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,8 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class TextboxTests {
-    private WebDriverSetup webDriverSetup;
+public class TextboxTests extends BaseTest {
     private static final String USER_NAME = "userName";
     private static final String USER_EMAIL = "userEmail";
     private static final String CURRENT_ADDRESS = "currentAddress";
@@ -21,13 +19,7 @@ public class TextboxTests {
 
     @BeforeEach
     void setUp() {
-        webDriverSetup = new WebDriverSetup();
-        webDriverSetup.setUp("https://demoqa.com/text-box");
-    }
-
-    @AfterEach
-    void tearDown() {
-        webDriverSetup.tearDown();
+        getDriver().get("https://demoqa.com/text-box");
     }
 
     @ParameterizedTest
@@ -70,9 +62,5 @@ public class TextboxTests {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].remove();", driver.findElement(By.id("adplus-anchor")));
         return executor;
-    }
-
-    private WebDriver getDriver() {
-        return webDriverSetup.getDriver();
     }
 }

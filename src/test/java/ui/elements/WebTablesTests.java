@@ -1,9 +1,8 @@
 package ui.elements;
 
 import com.github.javafaker.Faker;
-import org.base.WebDriverSetup;
+import org.base.BaseTest;
 import org.entity.Employee;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,20 +13,13 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WebTablesTests {
-    private WebDriverSetup webDriverSetup;
+public class WebTablesTests extends BaseTest {
     private final Faker faker = new Faker();
     private static final String XPATH_ELEMENTS = "//div[@class='rt-tbody']/div/div[not(contains(@class, 'pad'))]";
 
     @BeforeEach
     void setUp() {
-        webDriverSetup = new WebDriverSetup();
-        webDriverSetup.setUp("https://demoqa.com/webtables");
-    }
-
-    @AfterEach
-    void tearDown() {
-        webDriverSetup.tearDown();
+        getDriver().get("https://demoqa.com/webtables");
     }
 
     @Test
@@ -140,9 +132,5 @@ public class WebTablesTests {
             list.add(generateEmployee());
         }
         return list;
-    }
-
-    private WebDriver getDriver() {
-        return webDriverSetup.getDriver();
     }
 }

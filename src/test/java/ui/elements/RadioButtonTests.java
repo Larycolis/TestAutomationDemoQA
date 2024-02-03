@@ -1,7 +1,6 @@
 package ui.elements;
 
-import org.base.WebDriverSetup;
-import org.junit.jupiter.api.AfterEach;
+import org.base.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,19 +8,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-public class RadioButtonTests {
-    private WebDriverSetup webDriverSetup;
+public class RadioButtonTests extends BaseTest {
     private static final String TEXT_SUCCESS = "text-success";
 
     @BeforeEach
     void setUp() {
-        webDriverSetup = new WebDriverSetup();
-        webDriverSetup.setUp("https://demoqa.com/radio-button");
-    }
-
-    @AfterEach
-    void tearDown() {
-        webDriverSetup.tearDown();
+        getDriver().get("https://demoqa.com/radio-button");
     }
 
     @Test
@@ -48,9 +40,5 @@ public class RadioButtonTests {
         WebDriver driver = getDriver();
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", driver.findElement(By.id(id)));
-    }
-
-    private WebDriver getDriver() {
-        return webDriverSetup.getDriver();
     }
 }

@@ -1,7 +1,6 @@
 package ui.elements;
 
-import org.base.WebDriverSetup;
-import org.junit.jupiter.api.AfterEach;
+import org.base.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,18 +10,12 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class CheckboxTests {
-    private WebDriverSetup webDriverSetup;
+public class CheckboxTests extends BaseTest {
+    private BaseTest baseTest;
 
     @BeforeEach
     void setUp() {
-        webDriverSetup = new WebDriverSetup();
-        webDriverSetup.setUp("https://demoqa.com/checkbox");
-    }
-
-    @AfterEach
-    void tearDown() {
-        webDriverSetup.tearDown();
+        getDriver().get("https://demoqa.com/checkbox");
     }
 
     @Test
@@ -43,9 +36,5 @@ public class CheckboxTests {
         for (WebElement tmp : webElements) {
             Assertions.assertTrue(tmp.isSelected());
         }
-    }
-
-    private WebDriver getDriver() {
-        return webDriverSetup.getDriver();
     }
 }

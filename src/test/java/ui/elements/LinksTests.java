@@ -1,7 +1,6 @@
 package ui.elements;
 
-import org.base.WebDriverSetup;
-import org.junit.jupiter.api.AfterEach;
+import org.base.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,18 +12,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LinksTests {
-    private WebDriverSetup webDriverSetup;
-
+public class LinksTests extends BaseTest {
     @BeforeEach
     void setUp() {
-        webDriverSetup = new WebDriverSetup();
-        webDriverSetup.setUp("https://demoqa.com/links");
-    }
-
-    @AfterEach
-    void tearDown() {
-        webDriverSetup.tearDown();
+        getDriver().get("https://demoqa.com/links");
     }
 
     @ParameterizedTest
@@ -51,13 +42,5 @@ public class LinksTests {
         executor.executeScript("arguments[0].click();", driver.findElement(By.id(id)));
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.id(linkResponse)));
         Assertions.assertEquals(expectedLinkResponse, driver.findElement(By.id(linkResponse)).getText());
-    }
-
-    private WebDriver getDriver() {
-        return webDriverSetup.getDriver();
-    }
-
-    private WebDriverWait getWebDriverWait() {
-        return webDriverSetup.getWebDriverWait();
     }
 }
