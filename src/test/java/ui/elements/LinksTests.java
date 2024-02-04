@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LinksTests extends BaseTest {
@@ -33,8 +32,7 @@ public class LinksTests extends BaseTest {
     void clickLinksAndCheckSelectedTest(int status, String text, String id) {
         String expectedLinkResponse = "Link has responded with staus " + status + " and status text " + text;
         String linkResponse = "linkResponse";
-        JavascriptExecutor executor = (JavascriptExecutor) getDriver();
-        executor.executeScript("arguments[0].click();", getDriver().findElement(By.id(id)));
+        clickJavascriptExecutor(getDriver().findElement(By.id(id)));
         getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.id(linkResponse)));
         Assertions.assertEquals(expectedLinkResponse, getDriver().findElement(By.id(linkResponse)).getText());
     }

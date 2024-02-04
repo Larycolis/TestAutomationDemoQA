@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Making corrections based on code review comments(3)">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ui/elements/BrokenLinksImages.java" afterDir="false" />
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Creating a BrokenLinksImagesTest class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/BrokenLinksImagesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/BrokenLinksImagesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/LinksTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/LinksTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/RadioButtonTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/RadioButtonTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,8 +85,8 @@
     "settings.editor.selected.configurable": "editor.preferences.import"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.BrokenLinksImages.clickInvalidLinkAndCheck1">
-    <configuration name="BrokenLinksImages.checkInvalidImageIsNotDisplayed" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.BrokenLinksImagesTest">
+    <configuration name="BrokenLinksImagesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -97,7 +99,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.BrokenLinksImages.checkInvalidImageIsNotDisplayed&quot;" />
+            <option value="&quot;ui.elements.BrokenLinksImagesTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -219,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BrokenLinksImagesTest" />
         <item itemvalue="Gradle.BrokenLinksImages.clickInvalidLinkAndCheck1" />
         <item itemvalue="Gradle.BrokenLinksImages.clickInvalidLinkAndCheck" />
         <item itemvalue="Gradle.BrokenLinksImages.clickValidLinkAndCheckRelevantPageOpenedTest" />
         <item itemvalue="Gradle.BrokenLinksImages.checkValidImageIsDisplayed" />
-        <item itemvalue="Gradle.BrokenLinksImages.checkInvalidImageIsNotDisplayed" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706995081975</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Creating a BrokenLinksImagesTest class">
+      <option name="closed" value="true" />
+      <created>1707082133431</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707082133431</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -287,6 +297,7 @@
     <MESSAGE value="Making corrections based on code review comments" />
     <MESSAGE value="Making corrections based on code review comments(2)" />
     <MESSAGE value="Making corrections based on code review comments(3)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Making corrections based on code review comments(3)" />
+    <MESSAGE value="Creating a BrokenLinksImagesTest class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating a BrokenLinksImagesTest class" />
   </component>
 </project>
