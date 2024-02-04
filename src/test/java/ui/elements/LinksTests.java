@@ -24,6 +24,7 @@ public class LinksTests extends BaseTest {
         getWebDriverWait().until(ExpectedConditions.urlContains("https://demoqa.com/"));
     }
 
+    //TODO: needs to be changed using a proxy
     @ParameterizedTest
     @CsvSource({"201, Created, created", "204, No Content, no-content",
             "301, Moved Permanently, moved", "400, Bad Request, bad-request",
