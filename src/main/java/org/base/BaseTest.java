@@ -7,9 +7,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.HashMap;
 
 public class BaseTest {
     private static WebDriver driver;
@@ -25,8 +27,12 @@ public class BaseTest {
 
     @BeforeAll
     public static void beforeAll() {
+        ChromeOptions options = new ChromeOptions();
+        HashMap<String, Object> chromePref = new HashMap<>();
+        chromePref.put("download.default_directory", "D:\\Downloads");
+        options.setExperimentalOption("prefs", chromePref);
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }

@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Creating a BrokenLinksImagesTest class">
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="moving method clickJavascriptExecutor to BaseTest class">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ui/elements/UploadDownloadTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/BrokenLinksImagesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/BrokenLinksImagesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/LinksTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/LinksTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/RadioButtonTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/RadioButtonTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,15 +78,16 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/IDEA_projects/TestAutomationDemoQA",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.import"
+    "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.BrokenLinksImagesTest">
+  <component name="RunManager" selected="Gradle.UploadDownloadTest.clickDownloadAndCheckSampleFileIsDownloadedTest">
     <configuration name="BrokenLinksImagesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -100,54 +102,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;ui.elements.BrokenLinksImagesTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="BrokenLinksImages.checkValidImageIsDisplayed" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.elements.BrokenLinksImages.checkValidImageIsDisplayed&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="BrokenLinksImages.clickInvalidLinkAndCheck" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.elements.BrokenLinksImages.clickInvalidLinkAndCheck&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -182,7 +136,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="BrokenLinksImages.clickValidLinkAndCheckRelevantPageOpenedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ButtonsTests.clickButtonDoubleClickMeAndCheckSelectedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -195,7 +149,53 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.BrokenLinksImages.clickValidLinkAndCheckRelevantPageOpenedTest&quot;" />
+            <option value="&quot;ui.elements.ButtonsTests.clickButtonDoubleClickMeAndCheckSelectedTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestAutomationDemoQA [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UploadDownloadTest.clickDownloadAndCheckSampleFileIsDownloadedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ui.elements.UploadDownloadTest.clickDownloadAndCheckSampleFileIsDownloadedTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -221,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UploadDownloadTest.clickDownloadAndCheckSampleFileIsDownloadedTest" />
+        <item itemvalue="Gradle.TestAutomationDemoQA [test]" />
+        <item itemvalue="Gradle.ButtonsTests.clickButtonDoubleClickMeAndCheckSelectedTest" />
         <item itemvalue="Gradle.BrokenLinksImagesTest" />
         <item itemvalue="Gradle.BrokenLinksImages.clickInvalidLinkAndCheck1" />
-        <item itemvalue="Gradle.BrokenLinksImages.clickInvalidLinkAndCheck" />
-        <item itemvalue="Gradle.BrokenLinksImages.clickValidLinkAndCheckRelevantPageOpenedTest" />
-        <item itemvalue="Gradle.BrokenLinksImages.checkValidImageIsDisplayed" />
       </list>
     </recent_temporary>
   </component>
@@ -278,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707082133431</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="moving method clickJavascriptExecutor to BaseTest class">
+      <option name="closed" value="true" />
+      <created>1707084447436</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707084447436</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,6 +306,7 @@
     <MESSAGE value="Making corrections based on code review comments(2)" />
     <MESSAGE value="Making corrections based on code review comments(3)" />
     <MESSAGE value="Creating a BrokenLinksImagesTest class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating a BrokenLinksImagesTest class" />
+    <MESSAGE value="moving method clickJavascriptExecutor to BaseTest class" />
+    <option name="LAST_COMMIT_MESSAGE" value="moving method clickJavascriptExecutor to BaseTest class" />
   </component>
 </project>
