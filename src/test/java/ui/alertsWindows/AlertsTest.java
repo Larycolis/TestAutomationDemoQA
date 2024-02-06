@@ -53,7 +53,7 @@ public class AlertsTest extends BaseTest {
     }
 
     @Test
-    void clickAlertButtonAndCheckAlertText() {
+    void clickAlertButtonAndCheckAlertTextTest() {
         Alert alert = clickAlertButtonAndSwitchToAlert(PROMT_BUTTON);
         Assertions.assertEquals("Please enter your name", alert.getText());
     }
