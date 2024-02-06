@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Creating an UploadDownloadTest class">
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Add clickChooseFileAndUploadFileTest method">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/AlertsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/UploadDownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/UploadDownloadTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,30 +83,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.UploadDownloadTest.clickChooseFileAndUploadFileTest">
-    <configuration name="TestAutomationDemoQA [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="UploadDownloadTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.AlertsTest.clickConfirmationAlertButtonCheckAndConfirmOkAlertTest">
+    <configuration name="AlertsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -120,7 +97,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.UploadDownloadTest&quot;" />
+            <option value="&quot;ui.alertsWindows.AlertsTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -131,7 +108,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UploadDownloadTest.clickChooseFileAndUploadFile" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AlertsTest.clickAlertButtonAndCheckAlertText" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -144,7 +121,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.UploadDownloadTest.clickChooseFileAndUploadFile&quot;" />
+            <option value="&quot;ui.alertsWindows.AlertsTest.clickAlertButtonAndCheckAlertText&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -155,7 +132,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UploadDownloadTest.clickChooseFileAndUploadFileTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AlertsTest.clickAlertButtonEnterValueCloseAlertOkAndCheckDisplayedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -168,7 +145,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.UploadDownloadTest.clickChooseFileAndUploadFileTest&quot;" />
+            <option value="&quot;ui.alertsWindows.AlertsTest.clickAlertButtonEnterValueCloseAlertOkAndCheckDisplayedTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -179,7 +156,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UploadDownloadTest.clickDownloadAndCheckSampleFileIsDownloadedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AlertsTest.clickConfirmationAlertButtonCheckAndConfirmOkAlertTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -192,7 +169,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.UploadDownloadTest.clickDownloadAndCheckSampleFileIsDownloadedTest&quot;" />
+            <option value="&quot;ui.alertsWindows.AlertsTest.clickConfirmationAlertButtonCheckAndConfirmOkAlertTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AlertsTest.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ui.alertsWindows.AlertsTest.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -218,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UploadDownloadTest.clickChooseFileAndUploadFileTest" />
-        <item itemvalue="Gradle.UploadDownloadTest" />
-        <item itemvalue="Gradle.UploadDownloadTest.clickChooseFileAndUploadFile" />
-        <item itemvalue="Gradle.UploadDownloadTest.clickDownloadAndCheckSampleFileIsDownloadedTest" />
-        <item itemvalue="Gradle.TestAutomationDemoQA [test]" />
+        <item itemvalue="Gradle.AlertsTest.clickConfirmationAlertButtonCheckAndConfirmOkAlertTest" />
+        <item itemvalue="Gradle.AlertsTest" />
+        <item itemvalue="Gradle.AlertsTest.clickAlertButtonAndCheckAlertText" />
+        <item itemvalue="Gradle.AlertsTest.clickAlertButtonEnterValueCloseAlertOkAndCheckDisplayedTest" />
+        <item itemvalue="Gradle.AlertsTest.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707163112625</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add clickChooseFileAndUploadFileTest method">
+      <option name="closed" value="true" />
+      <created>1707175765956</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707175765956</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -313,6 +322,7 @@
     <MESSAGE value="Creating a BrokenLinksImagesTest class" />
     <MESSAGE value="moving method clickJavascriptExecutor to BaseTest class" />
     <MESSAGE value="Creating an UploadDownloadTest class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating an UploadDownloadTest class" />
+    <MESSAGE value="Add clickChooseFileAndUploadFileTest method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add clickChooseFileAndUploadFileTest method" />
   </component>
 </project>
