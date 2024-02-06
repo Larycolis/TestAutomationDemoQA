@@ -9,11 +9,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class AlertsTest extends BaseTest {
+public class AlertTests extends BaseTest {
     private static final String ALERT_BUTTON = "alertButton";
     private static final String TIMER_ALERT_BUTTON = "timerAlertButton";
     private static final String CONFIRM_BUTTON = "confirmButton";
@@ -79,8 +76,7 @@ public class AlertsTest extends BaseTest {
 
     private Alert clickAlertButtonWaitAndSwitchToAlert() {
         getDriver().findElement(By.id(TIMER_ALERT_BUTTON)).click();
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofMillis(5000));
-        wait.until(ExpectedConditions.alertIsPresent());
+        getWebDriverWait().until(ExpectedConditions.alertIsPresent());
         return getDriver().switchTo().alert();
     }
 }
