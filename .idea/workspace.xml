@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Minor changes in an AlertsTest class">
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Minor changes in an AlertsTest class(2)">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ui/elements/DynamicPropertiesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/AlertsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/AlertTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,20 +70,20 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/IDEA_projects/TestAutomationDemoQA&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/IDEA_projects/lenta_automation_UI",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
-}</component>
-  <component name="RunManager" selected="Gradle.AlertTests.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest">
+}]]></component>
+  <component name="RunManager" selected="Gradle.DynamicPropertiesTest.waitUntilColorChangedAndClickTest">
     <configuration name="AlertTests.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -108,7 +108,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AlertsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DynamicPropertiesTest.checkTextIsDisplayed" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -121,7 +121,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.AlertsTest&quot;" />
+            <option value="&quot;ui.elements.DynamicPropertiesTest.checkTextIsDisplayed&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -132,7 +132,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AlertsTest.clickAlertButtonAndCheckAlertText" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DynamicPropertiesTest.waitUntilColorChangedAndClickTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -145,7 +145,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.AlertsTest.clickAlertButtonAndCheckAlertText&quot;" />
+            <option value="&quot;ui.elements.DynamicPropertiesTest.waitUntilColorChangedAndClickTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,7 +156,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AlertsTest.clickAlertButtonEnterValueCloseAlertOkAndCheckDisplayedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DynamicPropertiesTest.waitUntilEnabledAndClickTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +169,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.AlertsTest.clickAlertButtonEnterValueCloseAlertOkAndCheckDisplayedTest&quot;" />
+            <option value="&quot;ui.elements.DynamicPropertiesTest.waitUntilEnabledAndClickTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -180,7 +180,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AlertsTest.clickConfirmationAlertButtonCheckAndConfirmOkAlertTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DynamicPropertiesTest.waitUntilVisibleAndClickTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -193,7 +193,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.AlertsTest.clickConfirmationAlertButtonCheckAndConfirmOkAlertTest&quot;" />
+            <option value="&quot;ui.elements.DynamicPropertiesTest.waitUntilVisibleAndClickTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -219,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DynamicPropertiesTest.waitUntilColorChangedAndClickTest" />
+        <item itemvalue="Gradle.DynamicPropertiesTest.checkTextIsDisplayed" />
+        <item itemvalue="Gradle.DynamicPropertiesTest.waitUntilVisibleAndClickTest" />
+        <item itemvalue="Gradle.DynamicPropertiesTest.waitUntilEnabledAndClickTest" />
         <item itemvalue="Gradle.AlertTests.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest" />
-        <item itemvalue="Gradle.AlertsTest.clickConfirmationAlertButtonCheckAndConfirmOkAlertTest" />
-        <item itemvalue="Gradle.AlertsTest" />
-        <item itemvalue="Gradle.AlertsTest.clickAlertButtonAndCheckAlertText" />
-        <item itemvalue="Gradle.AlertsTest.clickAlertButtonEnterValueCloseAlertOkAndCheckDisplayedTest" />
       </list>
     </recent_temporary>
   </component>
@@ -316,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707250924963</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Minor changes in an AlertsTest class(2)">
+      <option name="closed" value="true" />
+      <created>1707251432500</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707251432500</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,6 +349,7 @@
     <MESSAGE value="Add clickChooseFileAndUploadFileTest method" />
     <MESSAGE value="Creating an AlertsTest class" />
     <MESSAGE value="Minor changes in an AlertsTest class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes in an AlertsTest class" />
+    <MESSAGE value="Minor changes in an AlertsTest class(2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes in an AlertsTest class(2)" />
   </component>
 </project>
