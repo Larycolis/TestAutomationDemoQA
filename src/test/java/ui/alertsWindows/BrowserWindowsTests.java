@@ -19,14 +19,14 @@ public class BrowserWindowsTests extends BaseTest {
     }
 
     @Test
-    void clickNewTabButtonAndSwitchAndCheckNewTabTest() {
+    void clickNewTabButtonSwitchAndCheckNewTabTest() {
         originWindow = clickToButtonAndSwitchToChildWindow("tabButton");
         assertUrlAndValue();
         closeChildWindowAndSwitchToOrigin(originWindow);
     }
 
     @Test
-    void clickNewWindowButtonAndSwitchAndCheckNewWindowTest() {
+    void clickNewWindowButtonSwitchAndCheckNewWindowTest() {
         originWindow = clickToButtonAndSwitchToChildWindow("windowButton");
         assertUrlAndValue();
         closeChildWindowAndSwitchToOrigin(originWindow);

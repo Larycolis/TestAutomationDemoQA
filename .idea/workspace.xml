@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Create waitUntil tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/BrowserWindowsTests.java" afterDir="false" />
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Create SwitchToNewWindowAndCheck tests">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/ModalDialogsTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/DynamicPropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/DynamicPropertiesTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/UploadDownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/UploadDownloadTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/BrowserWindowsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/BrowserWindowsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.BrowserWindowsTests">
+  <component name="RunManager" selected="Gradle.ModalDialogsTests">
     <configuration name="BrowserWindowsTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -100,54 +99,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;ui.alertsWindows.BrowserWindowsTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="BrowserWindowsTests.clickNewTabButtonAndSwitchNewTabTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.BrowserWindowsTests.clickNewTabButtonAndSwitchNewTabTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="BrowserWindowsTests.clickNewWindowButtonAndSwitchNewWindowTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.BrowserWindowsTests.clickNewWindowButtonAndSwitchNewWindowTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -182,7 +133,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DynamicPropertiesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ModalDialogsTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -195,7 +146,55 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.DynamicPropertiesTest&quot;" />
+            <option value="&quot;ui.alertsWindows.ModalDialogsTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ModalDialogsTests.clickLargeModalButtonAndCheckOpenNewLargeModalTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ui.alertsWindows.ModalDialogsTests.clickLargeModalButtonAndCheckOpenNewLargeModalTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ModalDialogsTests.clickSmallModalButtonAndCheckOpenNewSmallModalTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ui.alertsWindows.ModalDialogsTests.clickSmallModalButtonAndCheckOpenNewSmallModalTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -221,11 +220,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ModalDialogsTests" />
+        <item itemvalue="Gradle.ModalDialogsTests.clickLargeModalButtonAndCheckOpenNewLargeModalTest" />
+        <item itemvalue="Gradle.ModalDialogsTests.clickSmallModalButtonAndCheckOpenNewSmallModalTest" />
         <item itemvalue="Gradle.BrowserWindowsTests" />
         <item itemvalue="Gradle.BrowserWindowsTests.clickNewWindowMessageButtonAndCheckNewWindowMessageTest" />
-        <item itemvalue="Gradle.BrowserWindowsTests.clickNewWindowButtonAndSwitchNewWindowTest" />
-        <item itemvalue="Gradle.BrowserWindowsTests.clickNewTabButtonAndSwitchNewTabTest" />
-        <item itemvalue="Gradle.DynamicPropertiesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -334,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707496586693</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Create SwitchToNewWindowAndCheck tests">
+      <option name="closed" value="true" />
+      <created>1707654226115</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1707654226115</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -361,6 +368,7 @@
     <MESSAGE value="Minor changes in an AlertsTest class" />
     <MESSAGE value="Minor changes in an AlertsTest class(2)" />
     <MESSAGE value="Create waitUntil tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create waitUntil tests" />
+    <MESSAGE value="Create SwitchToNewWindowAndCheck tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create SwitchToNewWindowAndCheck tests" />
   </component>
 </project>
