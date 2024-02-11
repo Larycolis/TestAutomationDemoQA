@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class DynamicPropertiesTest extends BaseTest {
+public class DynamicPropertiesTests extends BaseTest {
     @BeforeEach
     void setUp() {
         getDriver().get("https://demoqa.com/dynamic-properties");

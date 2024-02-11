@@ -15,7 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class UploadDownloadTest extends BaseTest {
+public class UploadDownloadTests extends BaseTest {
     @BeforeEach
     void setUp() {
         getDriver().get("https://demoqa.com/upload-download");

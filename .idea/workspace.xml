@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Minor changes in an AlertsTest class(2)">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ui/elements/DynamicPropertiesTest.java" afterDir="false" />
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Create waitUntil tests">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/BrowserWindowsTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/DynamicPropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/DynamicPropertiesTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/UploadDownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/UploadDownloadTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,21 +72,21 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/IDEA_projects/lenta_automation_UI",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "File.Encoding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/IDEA_projects/lenta_automation_UI&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.DynamicPropertiesTest.waitUntilColorChangedAndClickTest">
-    <configuration name="AlertTests.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+}</component>
+  <component name="RunManager" selected="Gradle.BrowserWindowsTests">
+    <configuration name="BrowserWindowsTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -97,7 +99,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.AlertTests.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest&quot;" />
+            <option value="&quot;ui.alertsWindows.BrowserWindowsTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -108,7 +110,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DynamicPropertiesTest.checkTextIsDisplayed" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BrowserWindowsTests.clickNewTabButtonAndSwitchNewTabTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -121,7 +123,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.DynamicPropertiesTest.checkTextIsDisplayed&quot;" />
+            <option value="&quot;ui.alertsWindows.BrowserWindowsTests.clickNewTabButtonAndSwitchNewTabTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -132,7 +134,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DynamicPropertiesTest.waitUntilColorChangedAndClickTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BrowserWindowsTests.clickNewWindowButtonAndSwitchNewWindowTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -145,7 +147,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.DynamicPropertiesTest.waitUntilColorChangedAndClickTest&quot;" />
+            <option value="&quot;ui.alertsWindows.BrowserWindowsTests.clickNewWindowButtonAndSwitchNewWindowTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,7 +158,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DynamicPropertiesTest.waitUntilEnabledAndClickTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BrowserWindowsTests.clickNewWindowMessageButtonAndCheckNewWindowMessageTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +171,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.DynamicPropertiesTest.waitUntilEnabledAndClickTest&quot;" />
+            <option value="&quot;ui.alertsWindows.BrowserWindowsTests.clickNewWindowMessageButtonAndCheckNewWindowMessageTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -180,7 +182,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DynamicPropertiesTest.waitUntilVisibleAndClickTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DynamicPropertiesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -193,7 +195,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.DynamicPropertiesTest.waitUntilVisibleAndClickTest&quot;" />
+            <option value="&quot;ui.elements.DynamicPropertiesTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -219,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.DynamicPropertiesTest.waitUntilColorChangedAndClickTest" />
-        <item itemvalue="Gradle.DynamicPropertiesTest.checkTextIsDisplayed" />
-        <item itemvalue="Gradle.DynamicPropertiesTest.waitUntilVisibleAndClickTest" />
-        <item itemvalue="Gradle.DynamicPropertiesTest.waitUntilEnabledAndClickTest" />
-        <item itemvalue="Gradle.AlertTests.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest" />
+        <item itemvalue="Gradle.BrowserWindowsTests" />
+        <item itemvalue="Gradle.BrowserWindowsTests.clickNewWindowMessageButtonAndCheckNewWindowMessageTest" />
+        <item itemvalue="Gradle.BrowserWindowsTests.clickNewWindowButtonAndSwitchNewWindowTest" />
+        <item itemvalue="Gradle.BrowserWindowsTests.clickNewTabButtonAndSwitchNewTabTest" />
+        <item itemvalue="Gradle.DynamicPropertiesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -324,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707251432500</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Create waitUntil tests">
+      <option name="closed" value="true" />
+      <created>1707496586693</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707496586693</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -350,6 +360,7 @@
     <MESSAGE value="Creating an AlertsTest class" />
     <MESSAGE value="Minor changes in an AlertsTest class" />
     <MESSAGE value="Minor changes in an AlertsTest class(2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes in an AlertsTest class(2)" />
+    <MESSAGE value="Create waitUntil tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create waitUntil tests" />
   </component>
 </project>
