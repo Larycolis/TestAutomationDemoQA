@@ -11,17 +11,17 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class FormPage {
     public FormPage inputFirstName(String firstName) {
-        sentKey("firstName", firstName);
+        sendKey("firstName", firstName);
         return this;
     }
 
     public FormPage inputLastName(String lastName) {
-        sentKey("lastName", lastName);
+        sendKey("lastName", lastName);
         return this;
     }
 
     public FormPage inputEmail(String email) {
-        sentKey("userEmail", email);
+        sendKey("userEmail", email);
         return this;
     }
 
@@ -31,17 +31,17 @@ public class FormPage {
     }
 
     public FormPage inputUserNumber(String number) {
-        sentKey("userNumber", number);
+        sendKey("userNumber", number);
         return this;
     }
 
     public FormPage inputDateOfBirth(String date) {
-        sentKey("dateOfBirthInput", date);
+        sendKey("dateOfBirthInput", date);
         return this;
     }
 
     public FormPage inputSubjects(String subject) {
-        sentKey("subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3", subject);
+        sendKey("subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3", subject);
         return this;
     }
 
@@ -51,17 +51,17 @@ public class FormPage {
     }
 
     public FormPage inputCurrentAddress(String address) {
-        sentKey("currentAddress", address);
+        sendKey("currentAddress", address);
         return this;
     }
 
     public FormPage inputState(String state) {
-        sentKey("state", state);
+        sendKey("state", state);
         return this;
     }
 
     public FormPage inputCity(String city) {
-        sentKey("city", city);
+        sendKey("city", city);
         return this;
     }
 
@@ -94,7 +94,7 @@ public class FormPage {
         checkCSSValueByElementId("userNumber");
     }
 
-    private void sentKey(String id, String key) {
+    private void sendKey(String id, String key) {
         $(By.id(id)).sendKeys(key);
     }
 
