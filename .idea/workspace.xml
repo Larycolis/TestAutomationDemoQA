@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Create OpenAndCloseModalWindow tests">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" afterDir="false" />
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Minor changes in Fill required form fields Selenide tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +84,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.PracticeFormTests.fillRequiredFieldsExceptionOfGenderAndCheckWarning">
-    <configuration name="ModalDialogsTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.PracticeFormTests.fillAllFieldsWithoutDownloadAndCheckModalWindowIsVisibleTest">
+    <configuration name="PracticeFormTests.fillAllFieldsWithoutDownloadAndCheckModalWindowIsVisibleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -100,7 +98,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.ModalDialogsTests&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsWithoutDownloadAndCheckModalWindowIsVisibleTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -111,7 +109,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ModalDialogsTests.clickLargeModalButtonAndCheckOpenNewLargeModalTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -124,7 +122,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.ModalDialogsTests.clickLargeModalButtonAndCheckOpenNewLargeModalTest&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -135,7 +133,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.bolvanka" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -148,7 +146,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.bolvanka&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -159,7 +157,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.bolvanka2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillRequiredFieldsExceptionOfLastNameAndCheckWarningTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -172,7 +170,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.bolvanka2&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillRequiredFieldsExceptionOfLastNameAndCheckWarningTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -183,7 +181,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillRequiredFieldsExceptionOfGenderAndCheckWarning" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillRequiredFieldsExceptionOfUserNumberAndCheckWarningTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -196,7 +194,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillRequiredFieldsExceptionOfGenderAndCheckWarning&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillRequiredFieldsExceptionOfUserNumberAndCheckWarningTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -222,11 +220,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PracticeFormTests.fillRequiredFieldsExceptionOfGenderAndCheckWarning" />
-        <item itemvalue="Gradle.PracticeFormTests.bolvanka2" />
-        <item itemvalue="Gradle.PracticeFormTests.bolvanka" />
-        <item itemvalue="Gradle.ModalDialogsTests" />
-        <item itemvalue="Gradle.ModalDialogsTests.clickLargeModalButtonAndCheckOpenNewLargeModalTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithoutDownloadAndCheckModalWindowIsVisibleTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillRequiredFieldsExceptionOfLastNameAndCheckWarningTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillRequiredFieldsExceptionOfUserNumberAndCheckWarningTest" />
       </list>
     </recent_temporary>
   </component>
@@ -351,7 +349,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707671956533</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Create Fill required form fields Selenide tests">
+      <option name="closed" value="true" />
+      <created>1707775268240</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1707775268240</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Minor changes in Fill required form fields Selenide tests">
+      <option name="closed" value="true" />
+      <created>1707775819529</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1707775819529</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -380,6 +394,8 @@
     <MESSAGE value="Create waitUntil tests" />
     <MESSAGE value="Create SwitchToNewWindowAndCheck tests" />
     <MESSAGE value="Create OpenAndCloseModalWindow tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create OpenAndCloseModalWindow tests" />
+    <MESSAGE value="Create Fill required form fields Selenide tests" />
+    <MESSAGE value="Minor changes in Fill required form fields Selenide tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes in Fill required form fields Selenide tests" />
   </component>
 </project>
