@@ -7,4 +7,5 @@ public class ModalWindowForm {
     public void checkModalWindowIsVisible() {
         $("div.modal-content").shouldBe(visible);
     }
+    //Todo: написать метод который проверяет содержимое ModalWindow
 }

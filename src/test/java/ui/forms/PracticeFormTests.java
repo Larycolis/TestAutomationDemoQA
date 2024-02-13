@@ -93,13 +93,14 @@ public class PracticeFormTests {
                 .checkUserNumberWarningActivity();
     }
 
+    //Todo: укрупнить метод .inputState(state) + .inputCity(city) = inputLocation(state, city)
     @ParameterizedTest
     @CsvSource({"1, 1, 5, English, 2, NCR, Delhi",
             "3, 201, 1, Biology, 1, Uttar Pradesh, Agra",
             "2, 92, 11, History, 3, Rajasthan, Jaiselmer",
             "1, 92, 1, Physics, 3, Haryana, Panipat"})
     void fillAllFieldsWithoutDownloadAndCheckModalWindowIsVisibleTest(int gender, int year, int month,
-                                                                      String sybject, int hobbie, String state,
+                                                                      String subject, int hobby, String state,
                                                                       String city) {
         page(FormPage.class)
                 .inputFirstName(FIRST_NAME_VALUE)
@@ -108,8 +109,8 @@ public class PracticeFormTests {
                 .selectGender(gender)
                 .inputUserNumber(USER_NUMBER_VALUE)
                 .inputDateOfBirth(year, month)
-                .inputSubjects(sybject)
-                .selectHobbies(hobbie)
+                .inputSubjects(subject)
+                .selectHobbies(hobby)
                 .inputCurrentAddress(USER_CURRANT_ADDRESS_VALUE)
                 .inputState(state)
                 .inputCity(city)
@@ -117,4 +118,6 @@ public class PracticeFormTests {
         page(ModalWindowForm.class)
                 .checkModalWindowIsVisible();
     }
+
+    //Todo: написать метод с upload
 }

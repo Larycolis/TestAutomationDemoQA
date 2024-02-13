@@ -6,8 +6,7 @@ import static com.codeborne.selenide.ClickOptions.usingJavaScript;
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.cssValue;
 import static com.codeborne.selenide.Condition.selected;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class FormPage {
     public FormPage inputFirstName(String firstName) {
@@ -37,10 +36,8 @@ public class FormPage {
 
     public FormPage inputDateOfBirth(int optionYear, int optionMonth) {
         $(By.id("dateOfBirthInput")).click(usingJavaScript());
-        $(By.className("react-datepicker__month-select")).click();
-        $("select.react-datepicker__year-select > option:nth-child(" + optionYear + ")").click();
-        $(By.className("react-datepicker__year-select")).click();
-        $("select.react-datepicker__month-select> option:nth-child(" + optionMonth + ")").click();
+        $(By.className("react-datepicker__year-select")).find("option:nth-child(" + optionYear + ")").click();
+        $(By.className("react-datepicker__month-select")).find("option:nth-child(" + optionMonth + ")").click();
         $("div.react-datepicker__month > div:nth-child(3) > div:nth-child(2)").click();
         return this;
     }
@@ -77,10 +74,10 @@ public class FormPage {
     }
 
     public FormPage checkGenderWarningActivity() {
-        $$("[id='genterWrapper'] input.custom-control-input")
+        $$("input[name='gender']")
                 .filter(selected)
                 .shouldHave(size(0));
-        $$("[id='genterWrapper'] label.custom-control-label")
+        $$x("//label[contains(@for,'gender')]")
                 .filter(cssValue("color", "rgba(220, 53, 69, 1)"))
                 .shouldHave(size(3));
         return this;
