@@ -93,15 +93,14 @@ public class PracticeFormTests {
                 .checkUserNumberWarningActivity();
     }
 
-    //Todo: укрупнить метод .inputState(state) + .inputCity(city) = inputLocation(state, city)
     @ParameterizedTest
     @CsvSource({"1, 1, 5, English, 2, NCR, Delhi",
             "3, 201, 1, Biology, 1, Uttar Pradesh, Agra",
             "2, 92, 11, History, 3, Rajasthan, Jaiselmer",
             "1, 92, 1, Physics, 3, Haryana, Panipat"})
-    void fillAllFieldsWithoutDownloadAndCheckModalWindowIsVisibleTest(int gender, int year, int month,
-                                                                      String subject, int hobby, String state,
-                                                                      String city) {
+    void fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest(int gender, int year, int month,
+                                                                    String subject, int hobby, String state,
+                                                                    String city) {
         page(FormPage.class)
                 .inputFirstName(FIRST_NAME_VALUE)
                 .inputLastName(LAST_NAME_VALUE)
@@ -112,12 +111,34 @@ public class PracticeFormTests {
                 .inputSubjects(subject)
                 .selectHobbies(hobby)
                 .inputCurrentAddress(USER_CURRANT_ADDRESS_VALUE)
-                .inputState(state)
-                .inputCity(city)
+                .inputLocation(state, city)
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
                 .checkModalWindowIsVisible();
     }
 
-    //Todo: написать метод с upload
+    @ParameterizedTest
+    @CsvSource({"1, 1, 5, English, 2, .jpg, NCR, Delhi",
+            "3, 201, 1, Biology, 1, .pdf, Uttar Pradesh, Agra",
+            "2, 92, 11, History, 3, .tif, Rajasthan, Jaiselmer",
+            "1, 92, 1, Physics, 3, .bmp, Haryana, Panipat"})
+    void fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest(int gender, int year, int month,
+                                                                 String subject, int hobby, String ext, String state,
+                                                                 String city) {
+        page(FormPage.class)
+                .inputFirstName(FIRST_NAME_VALUE)
+                .inputLastName(LAST_NAME_VALUE)
+                .inputEmail(EMAIL_VALUE)
+                .selectGender(gender)
+                .inputUserNumber(USER_NUMBER_VALUE)
+                .inputDateOfBirth(year, month)
+                .inputSubjects(subject)
+                .selectHobbies(hobby)
+                .uploadFile(ext)
+                .inputCurrentAddress(USER_CURRANT_ADDRESS_VALUE)
+                .inputLocation(state, city)
+                .submitRegistrationForm();
+        page(ModalWindowForm.class)
+                .checkModalWindowIsVisible();
+    }
 }

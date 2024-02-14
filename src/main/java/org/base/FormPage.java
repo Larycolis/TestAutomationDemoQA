@@ -1,6 +1,12 @@
 package org.base;
 
+import com.codeborne.selenide.SelenideElement;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import static com.codeborne.selenide.ClickOptions.usingJavaScript;
 import static com.codeborne.selenide.CollectionCondition.size;
@@ -52,18 +58,21 @@ public class FormPage {
         return this;
     }
 
+    public FormPage uploadFile(String ext) {
+        SelenideElement uploadPicture = $(By.id("uploadPicture"));
+        Path tempFile = generateTempFile(ext);
+        uploadPicture.sendKeys(tempFile.toString());
+        return this;
+    }
+
     public FormPage inputCurrentAddress(String address) {
         sendKeyById("currentAddress", address);
         return this;
     }
 
-    public FormPage inputState(String state) {
+    public FormPage inputLocation(String state, String city) {
         sendKeyById("react-select-3-input", state);
         $(By.id("react-select-3-input")).pressEnter();
-        return this;
-    }
-
-    public FormPage inputCity(String city) {
         sendKeyById("react-select-4-input", city);
         return this;
     }
@@ -103,5 +112,13 @@ public class FormPage {
 
     private void checkWarningCSSValueByElementId(String id) {
         $(By.id(id)).shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
+    }
+
+    private Path generateTempFile(String ext) {
+        try {
+            return Files.createTempFile(RandomStringUtils.randomAlphanumeric(5), ext);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
