@@ -1,12 +1,10 @@
 package org.base;
 
-import com.codeborne.selenide.SelenideElement;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 
 import static com.codeborne.selenide.ClickOptions.usingJavaScript;
 import static com.codeborne.selenide.CollectionCondition.size;
@@ -59,9 +57,7 @@ public class FormPage {
     }
 
     public FormPage uploadFile(String ext) {
-        SelenideElement uploadPicture = $(By.id("uploadPicture"));
-        Path tempFile = generateTempFile(ext);
-        uploadPicture.sendKeys(tempFile.toString());
+        $(By.id("uploadPicture")).sendKeys(generateTempFile(ext));
         return this;
     }
 
@@ -114,9 +110,9 @@ public class FormPage {
         $(By.id(id)).shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
     }
 
-    private Path generateTempFile(String ext) {
+    private String generateTempFile(String ext) {
         try {
-            return Files.createTempFile(RandomStringUtils.randomAlphanumeric(5), ext);
+            return Files.createTempFile(RandomStringUtils.randomAlphanumeric(5), ext).toString();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
