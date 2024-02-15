@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Сhanges: consolidation method, create Fill all form fields Selenide tests with file upload">
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="minor changes: file upload method optimization">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/entity/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/helper/CityValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/helper/StateValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/helper/StudentBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +44,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -83,7 +89,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.PracticeFormTests.fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest">
+  <component name="RunManager" selected="Gradle.PracticeFormTests">
     <configuration name="PracticeFormTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -156,7 +162,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillAllFieldsWithoutDownloadAndCheckModalWindowIsVisibleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +175,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsWithoutDownloadAndCheckModalWindowIsVisibleTest&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -219,9 +225,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest" />
-        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithoutDownloadAndCheckModalWindowIsVisibleTest" />
         <item itemvalue="Gradle.PracticeFormTests" />
+        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest" />
         <item itemvalue="Gradle.PracticeFormTests.clickSubmitWithoutFillingOutTheFormFieldsTest" />
         <item itemvalue="Gradle.PracticeFormTests.fillRequiredFieldsExceptionOfGenderAndCheckWarningTest" />
       </list>
@@ -388,7 +394,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707929544765</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="minor changes: file upload method optimization">
+      <option name="closed" value="true" />
+      <created>1707930000325</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1707930000325</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -422,6 +436,7 @@
     <MESSAGE value="Create Fill all form fields Selenide tests without file upload" />
     <MESSAGE value="Minor changes in Fill all form fields Selenide tests without file upload" />
     <MESSAGE value="Сhanges: consolidation method, create Fill all form fields Selenide tests with file upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сhanges: consolidation method, create Fill all form fields Selenide tests with file upload" />
+    <MESSAGE value="minor changes: file upload method optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes: file upload method optimization" />
   </component>
 </project>

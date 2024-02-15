@@ -4,6 +4,8 @@ import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.base.FormPage;
 import org.base.ModalWindowForm;
+import org.entity.Student;
+import org.helper.StudentBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -29,11 +31,17 @@ public class PracticeFormTests {
 
     @Test
     void fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest() {
+        Student testStudent = new StudentBuilder()
+                .firstName(FIRST_NAME_VALUE)
+                .lastName(LAST_NAME_VALUE)
+                .gender(1)
+                .mobileNumber(USER_NUMBER_VALUE)
+                .build();
         page(FormPage.class)
-                .inputFirstName(FIRST_NAME_VALUE)
-                .inputLastName(LAST_NAME_VALUE)
-                .selectGender(1)
-                .inputUserNumber(USER_NUMBER_VALUE)
+                .inputFirstName(testStudent.getFirstName())
+                .inputLastName(testStudent.getLastName())
+                .selectGender(testStudent.getGender())
+                .inputUserNumber(testStudent.getMobileNumber())
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
                 .checkModalWindowIsVisible();
@@ -42,10 +50,15 @@ public class PracticeFormTests {
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3})
     void fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest(int gender) {
+        Student testStudent = new StudentBuilder()
+                .lastName(LAST_NAME_VALUE)
+                .gender(gender)
+                .mobileNumber(USER_NUMBER_VALUE)
+                .build();
         page(FormPage.class)
-                .inputLastName(LAST_NAME_VALUE)
-                .selectGender(gender)
-                .inputUserNumber(USER_NUMBER_VALUE)
+                .inputLastName(testStudent.getLastName())
+                .selectGender(testStudent.getGender())
+                .inputUserNumber(testStudent.getMobileNumber())
                 .submitRegistrationForm()
                 .checkFirstNameWarningActivity();
     }
@@ -53,10 +66,15 @@ public class PracticeFormTests {
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3})
     void fillRequiredFieldsExceptionOfLastNameAndCheckWarningTest(int gender) {
+        Student testStudent = new StudentBuilder()
+                .firstName(FIRST_NAME_VALUE)
+                .gender(gender)
+                .mobileNumber(USER_NUMBER_VALUE)
+                .build();
         page(FormPage.class)
-                .inputFirstName(FIRST_NAME_VALUE)
-                .selectGender(gender)
-                .inputUserNumber(USER_NUMBER_VALUE)
+                .inputFirstName(testStudent.getFirstName())
+                .selectGender(testStudent.getGender())
+                .inputUserNumber(testStudent.getMobileNumber())
                 .submitRegistrationForm()
                 .checkLastNameWarningActivity();
     }
@@ -64,21 +82,32 @@ public class PracticeFormTests {
     @ParameterizedTest
     @CsvSource({"1, 012345678", "2, Number", "3, !@#&^"})
     void fillRequiredFieldsExceptionOfUserNumberAndCheckWarningTest(int gender, String userNumber) {
+        Student testStudent = new StudentBuilder()
+                .firstName(FIRST_NAME_VALUE)
+                .lastName(LAST_NAME_VALUE)
+                .gender(gender)
+                .mobileNumber(userNumber)
+                .build();
         page(FormPage.class)
-                .inputFirstName(FIRST_NAME_VALUE)
-                .inputLastName(LAST_NAME_VALUE)
-                .selectGender(gender)
-                .inputUserNumber(userNumber)
+                .inputFirstName(testStudent.getFirstName())
+                .inputLastName(testStudent.getLastName())
+                .selectGender(testStudent.getGender())
+                .inputUserNumber(testStudent.getMobileNumber())
                 .submitRegistrationForm()
                 .checkUserNumberWarningActivity();
     }
 
     @Test
     void fillRequiredFieldsExceptionOfGenderAndCheckWarningTest() {
+        Student testStudent = new StudentBuilder()
+                .firstName(FIRST_NAME_VALUE)
+                .lastName(LAST_NAME_VALUE)
+                .mobileNumber(USER_NUMBER_VALUE)
+                .build();
         page(FormPage.class)
-                .inputFirstName(FIRST_NAME_VALUE)
-                .inputLastName(LAST_NAME_VALUE)
-                .inputUserNumber(USER_NUMBER_VALUE)
+                .inputFirstName(testStudent.getFirstName())
+                .inputLastName(testStudent.getLastName())
+                .inputUserNumber(testStudent.getMobileNumber())
                 .submitRegistrationForm()
                 .checkGenderWarningActivity();
     }
@@ -101,17 +130,31 @@ public class PracticeFormTests {
     void fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest(int gender, int year, int month,
                                                                     String subject, int hobby, String state,
                                                                     String city) {
+        Student testStudent = new StudentBuilder()
+                .firstName(FIRST_NAME_VALUE)
+                .lastName(LAST_NAME_VALUE)
+                .email(EMAIL_VALUE)
+                .gender(gender)
+                .mobileNumber(USER_NUMBER_VALUE)
+                .yearOfBirth(year)
+                .monthOfBirth(month)
+                .subject(subject)
+                .hobby(hobby)
+                .currentAddress(USER_CURRANT_ADDRESS_VALUE)
+                .state(state)
+                .city(city)
+                .build();
         page(FormPage.class)
-                .inputFirstName(FIRST_NAME_VALUE)
-                .inputLastName(LAST_NAME_VALUE)
-                .inputEmail(EMAIL_VALUE)
-                .selectGender(gender)
-                .inputUserNumber(USER_NUMBER_VALUE)
-                .inputDateOfBirth(year, month)
-                .inputSubjects(subject)
-                .selectHobbies(hobby)
-                .inputCurrentAddress(USER_CURRANT_ADDRESS_VALUE)
-                .inputLocation(state, city)
+                .inputFirstName(testStudent.getFirstName())
+                .inputLastName(testStudent.getLastName())
+                .inputEmail(testStudent.getEmail())
+                .selectGender(testStudent.getGender())
+                .inputUserNumber(testStudent.getMobileNumber())
+                .inputDateOfBirth(testStudent.getYearOfBirth(), testStudent.getMonthOfBirth()) //Todo: добавить day в метод
+                .inputSubjects(testStudent.getSubject())
+                .selectHobbies(testStudent.getHobby())
+                .inputCurrentAddress(testStudent.getCurrentAddress())
+                .inputLocation(testStudent.getState(), testStudent.getCity()) //Todo: надо подумать как использовать enum StateValue, CityValue
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
                 .checkModalWindowIsVisible();
@@ -125,18 +168,32 @@ public class PracticeFormTests {
     void fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest(int gender, int year, int month,
                                                                  String subject, int hobby, String ext, String state,
                                                                  String city) {
+        Student testStudent = new StudentBuilder()
+                .firstName(FIRST_NAME_VALUE)
+                .lastName(LAST_NAME_VALUE)
+                .email(EMAIL_VALUE)
+                .gender(gender)
+                .mobileNumber(USER_NUMBER_VALUE)
+                .yearOfBirth(year)
+                .monthOfBirth(month)
+                .subject(subject)
+                .hobby(hobby)
+                .currentAddress(USER_CURRANT_ADDRESS_VALUE)
+                .state(state)
+                .city(city)
+                .build();
         page(FormPage.class)
-                .inputFirstName(FIRST_NAME_VALUE)
-                .inputLastName(LAST_NAME_VALUE)
-                .inputEmail(EMAIL_VALUE)
-                .selectGender(gender)
-                .inputUserNumber(USER_NUMBER_VALUE)
-                .inputDateOfBirth(year, month)
-                .inputSubjects(subject)
-                .selectHobbies(hobby)
+                .inputFirstName(testStudent.getFirstName())
+                .inputLastName(testStudent.getLastName())
+                .inputEmail(testStudent.getEmail())
+                .selectGender(testStudent.getGender())
+                .inputUserNumber(testStudent.getMobileNumber())
+                .inputDateOfBirth(testStudent.getYearOfBirth(), testStudent.getMonthOfBirth()) //Todo: добавить day в метод
+                .inputSubjects(testStudent.getSubject())
+                .selectHobbies(testStudent.getHobby())
                 .uploadFile(ext)
-                .inputCurrentAddress(USER_CURRANT_ADDRESS_VALUE)
-                .inputLocation(state, city)
+                .inputCurrentAddress(testStudent.getCurrentAddress())
+                .inputLocation(testStudent.getState(), testStudent.getCity()) //Todo: надо подумать как использовать enum StateValue, CityValue
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
                 .checkModalWindowIsVisible();
