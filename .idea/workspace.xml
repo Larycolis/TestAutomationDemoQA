@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="minor changes: file upload method optimization">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/entity/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/helper/CityValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/helper/StateValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/helper/StudentBuilder.java" afterDir="false" />
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Implementation Builder Design Pattern">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -402,7 +398,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707930000325</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Implementation Builder Design Pattern">
+      <option name="closed" value="true" />
+      <created>1708012234914</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1708012234914</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -437,6 +441,7 @@
     <MESSAGE value="Minor changes in Fill all form fields Selenide tests without file upload" />
     <MESSAGE value="Сhanges: consolidation method, create Fill all form fields Selenide tests with file upload" />
     <MESSAGE value="minor changes: file upload method optimization" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes: file upload method optimization" />
+    <MESSAGE value="Implementation Builder Design Pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementation Builder Design Pattern" />
   </component>
 </project>

@@ -29,6 +29,8 @@ public class PracticeFormTests {
         open("https://demoqa.com/automation-practice-form");
     }
 
+    // вынести студента с более повторяемыми полями в методах добавлять параметры
+    // в этого студента
     @Test
     void fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest() {
         Student testStudent = new StudentBuilder()
@@ -38,10 +40,10 @@ public class PracticeFormTests {
                 .mobileNumber(USER_NUMBER_VALUE)
                 .build();
         page(FormPage.class)
-                .inputFirstName(testStudent.getFirstName())
-                .inputLastName(testStudent.getLastName())
-                .selectGender(testStudent.getGender())
-                .inputUserNumber(testStudent.getMobileNumber())
+                .inputFirstName(testStudent)
+                .inputLastName(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
                 .checkModalWindowIsVisible();
@@ -56,9 +58,9 @@ public class PracticeFormTests {
                 .mobileNumber(USER_NUMBER_VALUE)
                 .build();
         page(FormPage.class)
-                .inputLastName(testStudent.getLastName())
-                .selectGender(testStudent.getGender())
-                .inputUserNumber(testStudent.getMobileNumber())
+                .inputLastName(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
                 .submitRegistrationForm()
                 .checkFirstNameWarningActivity();
     }
@@ -72,9 +74,9 @@ public class PracticeFormTests {
                 .mobileNumber(USER_NUMBER_VALUE)
                 .build();
         page(FormPage.class)
-                .inputFirstName(testStudent.getFirstName())
-                .selectGender(testStudent.getGender())
-                .inputUserNumber(testStudent.getMobileNumber())
+                .inputFirstName(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
                 .submitRegistrationForm()
                 .checkLastNameWarningActivity();
     }
@@ -89,10 +91,10 @@ public class PracticeFormTests {
                 .mobileNumber(userNumber)
                 .build();
         page(FormPage.class)
-                .inputFirstName(testStudent.getFirstName())
-                .inputLastName(testStudent.getLastName())
-                .selectGender(testStudent.getGender())
-                .inputUserNumber(testStudent.getMobileNumber())
+                .inputFirstName(testStudent)
+                .inputLastName(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
                 .submitRegistrationForm()
                 .checkUserNumberWarningActivity();
     }
@@ -105,9 +107,9 @@ public class PracticeFormTests {
                 .mobileNumber(USER_NUMBER_VALUE)
                 .build();
         page(FormPage.class)
-                .inputFirstName(testStudent.getFirstName())
-                .inputLastName(testStudent.getLastName())
-                .inputUserNumber(testStudent.getMobileNumber())
+                .inputFirstName(testStudent)
+                .inputLastName(testStudent)
+                .inputUserNumber(testStudent)
                 .submitRegistrationForm()
                 .checkGenderWarningActivity();
     }
@@ -145,16 +147,16 @@ public class PracticeFormTests {
                 .city(city)
                 .build();
         page(FormPage.class)
-                .inputFirstName(testStudent.getFirstName())
-                .inputLastName(testStudent.getLastName())
-                .inputEmail(testStudent.getEmail())
-                .selectGender(testStudent.getGender())
-                .inputUserNumber(testStudent.getMobileNumber())
-                .inputDateOfBirth(testStudent.getYearOfBirth(), testStudent.getMonthOfBirth()) //Todo: добавить day в метод
-                .inputSubjects(testStudent.getSubject())
-                .selectHobbies(testStudent.getHobby())
-                .inputCurrentAddress(testStudent.getCurrentAddress())
-                .inputLocation(testStudent.getState(), testStudent.getCity()) //Todo: надо подумать как использовать enum StateValue, CityValue
+                .inputFirstName(testStudent)
+                .inputLastName(testStudent)
+                .inputEmail(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
+                .inputDateOfBirth(testStudent) //Todo: подумать про LocalDateTime и работать с полной датой: год, месяц, день
+                .inputSubjects(testStudent)
+                .selectHobbies(testStudent)
+                .inputCurrentAddress(testStudent)
+                .inputLocation(testStudent) //Todo: надо подумать как использовать enum StateValue, CityValue
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
                 .checkModalWindowIsVisible();
@@ -183,17 +185,17 @@ public class PracticeFormTests {
                 .city(city)
                 .build();
         page(FormPage.class)
-                .inputFirstName(testStudent.getFirstName())
-                .inputLastName(testStudent.getLastName())
-                .inputEmail(testStudent.getEmail())
-                .selectGender(testStudent.getGender())
-                .inputUserNumber(testStudent.getMobileNumber())
-                .inputDateOfBirth(testStudent.getYearOfBirth(), testStudent.getMonthOfBirth()) //Todo: добавить day в метод
-                .inputSubjects(testStudent.getSubject())
-                .selectHobbies(testStudent.getHobby())
+                .inputFirstName(testStudent)
+                .inputLastName(testStudent)
+                .inputEmail(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
+                .inputDateOfBirth(testStudent) //Todo: подумать про LocalDateTime и работать с полной датой: год, месяц, день
+                .inputSubjects(testStudent)
+                .selectHobbies(testStudent)
                 .uploadFile(ext)
-                .inputCurrentAddress(testStudent.getCurrentAddress())
-                .inputLocation(testStudent.getState(), testStudent.getCity()) //Todo: надо подумать как использовать enum StateValue, CityValue
+                .inputCurrentAddress(testStudent)
+                .inputLocation(testStudent) //Todo: надо подумать как использовать enum StateValue, CityValue
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
                 .checkModalWindowIsVisible();

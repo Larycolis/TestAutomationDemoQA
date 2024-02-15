@@ -1,6 +1,7 @@
 package org.base;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.entity.Student;
 import org.openqa.selenium.By;
 
 import java.io.IOException;
@@ -13,46 +14,46 @@ import static com.codeborne.selenide.Condition.selected;
 import static com.codeborne.selenide.Selenide.*;
 
 public class FormPage {
-    public FormPage inputFirstName(String firstName) {
-        sendKeyById("firstName", firstName);
+    public FormPage inputFirstName(Student testStudent) {
+        sendKeyById("firstName", testStudent.getFirstName());
         return this;
     }
 
-    public FormPage inputLastName(String lastName) {
-        sendKeyById("lastName", lastName);
+    public FormPage inputLastName(Student testStudent) {
+        sendKeyById("lastName", testStudent.getLastName());
         return this;
     }
 
-    public FormPage inputEmail(String email) {
-        sendKeyById("userEmail", email);
+    public FormPage inputEmail(Student testStudent) {
+        sendKeyById("userEmail", testStudent.getEmail());
         return this;
     }
 
-    public FormPage selectGender(int option) {
-        $(By.id("gender-radio-" + option)).click(usingJavaScript());
+    public FormPage selectGender(Student testStudent) {
+        $(By.id("gender-radio-" + testStudent.getGender())).click(usingJavaScript());
         return this;
     }
 
-    public FormPage inputUserNumber(String number) {
-        sendKeyById("userNumber", number);
+    public FormPage inputUserNumber(Student testStudent) {
+        sendKeyById("userNumber", testStudent.getMobileNumber());
         return this;
     }
 
-    public FormPage inputDateOfBirth(int optionYear, int optionMonth) {
+    public FormPage inputDateOfBirth(Student testStudent) {
         $(By.id("dateOfBirthInput")).click(usingJavaScript());
-        $(By.className("react-datepicker__year-select")).find("option:nth-child(" + optionYear + ")").click();
-        $(By.className("react-datepicker__month-select")).find("option:nth-child(" + optionMonth + ")").click();
+        $(By.className("react-datepicker__year-select")).find("option:nth-child(" + testStudent.getYearOfBirth() + ")").click();
+        $(By.className("react-datepicker__month-select")).find("option:nth-child(" + testStudent.getMonthOfBirth() + ")").click();
         $("div.react-datepicker__month > div:nth-child(3) > div:nth-child(2)").click();
         return this;
     }
 
-    public FormPage inputSubjects(String subject) {
-        sendKeyById("subjectsInput", subject);
+    public FormPage inputSubjects(Student testStudent) {
+        sendKeyById("subjectsInput", testStudent.getSubject());
         return this;
     }
 
-    public FormPage selectHobbies(int option) {
-        $(By.id("hobbies-checkbox-" + option)).click(usingJavaScript());
+    public FormPage selectHobbies(Student testStudent) {
+        $(By.id("hobbies-checkbox-" + testStudent.getHobby())).click(usingJavaScript());
         return this;
     }
 
@@ -61,15 +62,15 @@ public class FormPage {
         return this;
     }
 
-    public FormPage inputCurrentAddress(String address) {
-        sendKeyById("currentAddress", address);
+    public FormPage inputCurrentAddress(Student testStudent) {
+        sendKeyById("currentAddress", testStudent.getCurrentAddress());
         return this;
     }
 
-    public FormPage inputLocation(String state, String city) {
-        sendKeyById("react-select-3-input", state);
+    public FormPage inputLocation(Student testStudent) {
+        sendKeyById("react-select-3-input", testStudent.getState());
         $(By.id("react-select-3-input")).pressEnter();
-        sendKeyById("react-select-4-input", city);
+        sendKeyById("react-select-4-input", testStudent.getCity());
         return this;
     }
 
