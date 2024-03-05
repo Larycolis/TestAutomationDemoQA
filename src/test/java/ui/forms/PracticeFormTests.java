@@ -29,8 +29,7 @@ public class PracticeFormTests {
         open("https://demoqa.com/automation-practice-form");
     }
 
-    // вынести студента с более повторяемыми полями в методах добавлять параметры
-    // в этого студента
+    // Todo: вынести студента с более повторяемыми полями в методах добавлять параметры в этого студента (чёт не получится, наверное)
     @Test
     void fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest() {
         Student testStudent = new StudentBuilder()
@@ -46,7 +45,8 @@ public class PracticeFormTests {
                 .inputUserNumber(testStudent)
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
-                .checkModalWindowIsVisible();
+                .checkModalWindowIsVisible()
+                .compareActualAndExpectedStudent(testStudent);
     }
 
     @ParameterizedTest
@@ -159,7 +159,8 @@ public class PracticeFormTests {
                 .inputLocation(testStudent) //Todo: надо подумать как использовать enum StateValue, CityValue
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
-                .checkModalWindowIsVisible();
+                .checkModalWindowIsVisible()
+                .compareActualAndExpectedStudent(testStudent);
     }
 
     @ParameterizedTest

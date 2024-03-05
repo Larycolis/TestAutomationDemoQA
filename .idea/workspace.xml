@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Implementation Builder Design Pattern">
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="moving getters to test methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/entity/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +86,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.PracticeFormTests">
+  <component name="RunManager" selected="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest">
     <configuration name="PracticeFormTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -182,7 +183,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillRequiredFieldsExceptionOfGenderAndCheckWarningTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -195,7 +196,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillRequiredFieldsExceptionOfGenderAndCheckWarningTest&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -221,11 +222,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest" />
         <item itemvalue="Gradle.PracticeFormTests" />
         <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest" />
-        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest" />
         <item itemvalue="Gradle.PracticeFormTests.clickSubmitWithoutFillingOutTheFormFieldsTest" />
-        <item itemvalue="Gradle.PracticeFormTests.fillRequiredFieldsExceptionOfGenderAndCheckWarningTest" />
       </list>
     </recent_temporary>
   </component>
@@ -406,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708012234914</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="moving getters to test methods">
+      <option name="closed" value="true" />
+      <created>1708014866057</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708014866057</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,6 +451,7 @@
     <MESSAGE value="Сhanges: consolidation method, create Fill all form fields Selenide tests with file upload" />
     <MESSAGE value="minor changes: file upload method optimization" />
     <MESSAGE value="Implementation Builder Design Pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementation Builder Design Pattern" />
+    <MESSAGE value="moving getters to test methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="moving getters to test methods" />
   </component>
 </project>
