@@ -39,16 +39,17 @@ public class FormPage {
         return this;
     }
 
-    public FormPage inputDateOfBirth(Student testStudent) {
+    public FormPage inputDateOfBirth() {
         $(By.id("dateOfBirthInput")).click(usingJavaScript());
-        $(By.className("react-datepicker__year-select")).find("option:nth-child(" + testStudent.getYearOfBirth() + ")").click();
-        $(By.className("react-datepicker__month-select")).find("option:nth-child(" + testStudent.getMonthOfBirth() + ")").click();
-        $("div.react-datepicker__month > div:nth-child(3) > div:nth-child(2)").click();
+        $(By.className("react-datepicker__year-select")).find("option:nth-child(92)").click(); //1991
+        $(By.className("react-datepicker__month-select")).find("option:nth-child(3)").click(); //March
+        $("div.react-datepicker__month > div:nth-child(3) > div:nth-child(2)").click(usingJavaScript()); //11
         return this;
     }
 
     public FormPage inputSubjects(Student testStudent) {
         sendKeyById("subjectsInput", testStudent.getSubject());
+        $(By.id("subjectsInput")).pressEnter();
         return this;
     }
 
@@ -71,6 +72,7 @@ public class FormPage {
         sendKeyById("react-select-3-input", testStudent.getState());
         $(By.id("react-select-3-input")).pressEnter();
         sendKeyById("react-select-4-input", testStudent.getCity());
+        $(By.id("react-select-4-input")).pressEnter();
         return this;
     }
 

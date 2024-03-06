@@ -37,12 +37,16 @@ public class PracticeFormTests {
                 .lastName(LAST_NAME_VALUE)
                 .gender(1)
                 .mobileNumber(USER_NUMBER_VALUE)
+                .yearOfBirth(1991)
+                .monthOfBirth("March")
+                .dayOfBirth(11)
                 .build();
         page(FormPage.class)
                 .inputFirstName(testStudent)
                 .inputLastName(testStudent)
                 .selectGender(testStudent)
                 .inputUserNumber(testStudent)
+                .inputDateOfBirth()
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
                 .checkModalWindowIsVisible()
@@ -125,11 +129,11 @@ public class PracticeFormTests {
     }
 
     @ParameterizedTest
-    @CsvSource({"1, 1, 5, English, 2, NCR, Delhi",
-            "3, 201, 1, Biology, 1, Uttar Pradesh, Agra",
-            "2, 92, 11, History, 3, Rajasthan, Jaiselmer",
-            "1, 92, 1, Physics, 3, Haryana, Panipat"})
-    void fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest(int gender, int year, int month,
+    @CsvSource({"1, 1991, March, 11, English, 2, NCR, Delhi",
+            "3, 1991, March, 11, Biology, 1, Haryana, Karnal",
+            "2, 1991, March, 11, History, 3, Rajasthan, Jaiselmer",
+            "1, 1991, March, 11, Physics, 3, Haryana, Panipat"})
+    void fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest(int gender, int year, String month, int day,
                                                                     String subject, int hobby, String state,
                                                                     String city) {
         Student testStudent = new StudentBuilder()
@@ -140,6 +144,7 @@ public class PracticeFormTests {
                 .mobileNumber(USER_NUMBER_VALUE)
                 .yearOfBirth(year)
                 .monthOfBirth(month)
+                .dayOfBirth(day)
                 .subject(subject)
                 .hobby(hobby)
                 .currentAddress(USER_CURRANT_ADDRESS_VALUE)
@@ -152,7 +157,7 @@ public class PracticeFormTests {
                 .inputEmail(testStudent)
                 .selectGender(testStudent)
                 .inputUserNumber(testStudent)
-                .inputDateOfBirth(testStudent) //Todo: подумать про LocalDateTime и работать с полной датой: год, месяц, день
+                .inputDateOfBirth() //Todo: подумать про LocalDateTime и работать с полной датой: год, месяц, день
                 .inputSubjects(testStudent)
                 .selectHobbies(testStudent)
                 .inputCurrentAddress(testStudent)
@@ -164,11 +169,11 @@ public class PracticeFormTests {
     }
 
     @ParameterizedTest
-    @CsvSource({"1, 1, 5, English, 2, .jpg, NCR, Delhi",
-            "3, 201, 1, Biology, 1, .pdf, Uttar Pradesh, Agra",
-            "2, 92, 11, History, 3, .tif, Rajasthan, Jaiselmer",
-            "1, 92, 1, Physics, 3, .bmp, Haryana, Panipat"})
-    void fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest(int gender, int year, int month,
+    @CsvSource({"1, 1991, March, 11, English, 2, .jpg, NCR, Delhi",
+            "3, 1991, March, 11, Biology, 1, .pdf, Uttar Pradesh, Agra",
+            "2, 1991, March, 11, History, 3, .tif, Rajasthan, Jaiselmer",
+            "1, 1991, March, 11, Physics, 3, .bmp, Haryana, Panipat"})
+    void fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest(int gender, int year, String month, int day,
                                                                  String subject, int hobby, String ext, String state,
                                                                  String city) {
         Student testStudent = new StudentBuilder()
@@ -179,6 +184,7 @@ public class PracticeFormTests {
                 .mobileNumber(USER_NUMBER_VALUE)
                 .yearOfBirth(year)
                 .monthOfBirth(month)
+                .dayOfBirth(day)
                 .subject(subject)
                 .hobby(hobby)
                 .currentAddress(USER_CURRANT_ADDRESS_VALUE)
@@ -191,7 +197,7 @@ public class PracticeFormTests {
                 .inputEmail(testStudent)
                 .selectGender(testStudent)
                 .inputUserNumber(testStudent)
-                .inputDateOfBirth(testStudent) //Todo: подумать про LocalDateTime и работать с полной датой: год, месяц, день
+                .inputDateOfBirth() //Todo: подумать про LocalDateTime и работать с полной датой: год, месяц, день
                 .inputSubjects(testStudent)
                 .selectHobbies(testStudent)
                 .uploadFile(ext)
@@ -200,5 +206,39 @@ public class PracticeFormTests {
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
                 .checkModalWindowIsVisible();
+    }
+
+    @Test
+    void Test() {
+        Student testStudent = new StudentBuilder()
+                .firstName(FIRST_NAME_VALUE)
+                .lastName(LAST_NAME_VALUE)
+                .email(EMAIL_VALUE)
+                .gender(1)
+                .mobileNumber(USER_NUMBER_VALUE)
+                .yearOfBirth(1991)
+                .monthOfBirth("March")
+                .dayOfBirth(11)
+                .subject("English")
+                .hobby(1)
+                .currentAddress(USER_CURRANT_ADDRESS_VALUE)
+                .state("NCR")
+                .city("Delhi")
+                .build();
+        page(FormPage.class)
+                .inputFirstName(testStudent)
+                .inputLastName(testStudent)
+                .inputEmail(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
+                .inputDateOfBirth() //Todo: подумать про LocalDateTime и работать с полной датой: год, месяц, день
+                .inputSubjects(testStudent)
+                .selectHobbies(testStudent)
+                .inputCurrentAddress(testStudent)
+                .inputLocation(testStudent) //Todo: надо подумать как использовать enum StateValue, CityValue
+                .submitRegistrationForm();
+        page(ModalWindowForm.class)
+                .checkModalWindowIsVisible()
+                .compareActualAndExpectedStudent(testStudent);
     }
 }

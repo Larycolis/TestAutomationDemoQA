@@ -9,7 +9,7 @@ public class StudentBuilder {
     private int gender;
     private String mobileNumber;
     private int yearOfBirth;
-    private int monthOfBirth;
+    private String monthOfBirth;
     private int dayOfBirth;
     private String subject;
     private int hobby;
@@ -47,7 +47,7 @@ public class StudentBuilder {
         return this;
     }
 
-    public StudentBuilder monthOfBirth(int monthOfBirth) {
+    public StudentBuilder monthOfBirth(String monthOfBirth) {
         this.monthOfBirth = monthOfBirth;
         return this;
     }

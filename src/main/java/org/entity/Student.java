@@ -9,7 +9,7 @@ public class Student {
     private int gender;
     private String mobileNumber;
     private int yearOfBirth;
-    private int monthOfBirth;
+    private String monthOfBirth;
     private int dayOfBirth;
     private String subject;
     private int hobby;
@@ -68,11 +68,11 @@ public class Student {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public int getMonthOfBirth() {
+    public String getMonthOfBirth() {
         return monthOfBirth;
     }
 
-    public void setMonthOfBirth(int monthOfBirth) {
+    public void setMonthOfBirth(String monthOfBirth) {
         this.monthOfBirth = monthOfBirth;
     }
 
@@ -127,17 +127,21 @@ public class Student {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Student student)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Student student = (Student) o;
 
         if (gender != student.gender) return false;
         if (yearOfBirth != student.yearOfBirth) return false;
-        if (monthOfBirth != student.monthOfBirth) return false;
         if (dayOfBirth != student.dayOfBirth) return false;
         if (hobby != student.hobby) return false;
         if (!firstName.equals(student.firstName)) return false;
         if (!lastName.equals(student.lastName)) return false;
         if (!Objects.equals(email, student.email)) return false;
-        if (!mobileNumber.equals(student.mobileNumber)) return false;
+        if (!Objects.equals(mobileNumber, student.mobileNumber))
+            return false;
+        if (!Objects.equals(monthOfBirth, student.monthOfBirth))
+            return false;
         if (!Objects.equals(subject, student.subject)) return false;
         if (!Objects.equals(currentAddress, student.currentAddress))
             return false;
@@ -151,9 +155,9 @@ public class Student {
         result = 31 * result + lastName.hashCode();
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + gender;
-        result = 31 * result + mobileNumber.hashCode();
+        result = 31 * result + (mobileNumber != null ? mobileNumber.hashCode() : 0);
         result = 31 * result + yearOfBirth;
-        result = 31 * result + monthOfBirth;
+        result = 31 * result + (monthOfBirth != null ? monthOfBirth.hashCode() : 0);
         result = 31 * result + dayOfBirth;
         result = 31 * result + (subject != null ? subject.hashCode() : 0);
         result = 31 * result + hobby;
