@@ -3,19 +3,20 @@ package org.helper;
 import org.entity.Student;
 
 public class StudentBuilder {
+    //TODO: import lombok
     private String firstName;
     private String lastName;
     private String email;
     private int gender;
     private String mobileNumber;
-    private int yearOfBirth;
-    private String monthOfBirth;
-    private int dayOfBirth;
+    private String dateOfBirth;
     private String subject;
     private int hobby;
+    private String pictureName;
     private String currentAddress;
     private String state;
     private String city;
+    private String stateAndCity;
 
     public StudentBuilder firstName(String firstName) {
         this.firstName = firstName;
@@ -42,18 +43,8 @@ public class StudentBuilder {
         return this;
     }
 
-    public StudentBuilder yearOfBirth(int yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
-        return this;
-    }
-
-    public StudentBuilder monthOfBirth(String monthOfBirth) {
-        this.monthOfBirth = monthOfBirth;
-        return this;
-    }
-
-    public StudentBuilder dayOfBirth(int dayOfBirth) {
-        this.dayOfBirth = dayOfBirth;
+    public StudentBuilder dateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
         return this;
     }
 
@@ -64,6 +55,11 @@ public class StudentBuilder {
 
     public StudentBuilder hobby(int hobby) {
         this.hobby = hobby;
+        return this;
+    }
+
+    public StudentBuilder pictureName(String pictureName) {
+        this.pictureName = pictureName;
         return this;
     }
 
@@ -82,6 +78,11 @@ public class StudentBuilder {
         return this;
     }
 
+    public StudentBuilder stateAndCity(String stateAndCity) {
+        this.stateAndCity = stateAndCity;
+        return this;
+    }
+
     public Student build() {
         Student student = new Student();
         student.setFirstName(firstName);
@@ -89,14 +90,14 @@ public class StudentBuilder {
         student.setEmail(email);
         student.setGender(gender);
         student.setMobileNumber(mobileNumber);
-        student.setYearOfBirth(yearOfBirth);
-        student.setMonthOfBirth(monthOfBirth);
-        student.setDayOfBirth(dayOfBirth);
+        student.setDateOfBirth(dateOfBirth);
         student.setSubject(subject);
         student.setHobby(hobby);
+        student.setPictureName(pictureName);
         student.setCurrentAddress(currentAddress);
         student.setState(state);
         student.setCity(city);
+        student.setStateAndCity(stateAndCity);
         return student;
     }
 }

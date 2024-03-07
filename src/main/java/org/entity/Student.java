@@ -8,14 +8,14 @@ public class Student {
     private String email;
     private int gender;
     private String mobileNumber;
-    private int yearOfBirth;
-    private String monthOfBirth;
-    private int dayOfBirth;
+    private String dateOfBirth;
     private String subject;
     private int hobby;
+    private String pictureName;
     private String currentAddress;
     private String state;
     private String city;
+    private String stateAndCity;
 
     public Student() {
     }
@@ -60,28 +60,12 @@ public class Student {
         this.mobileNumber = mobileNumber;
     }
 
-    public int getYearOfBirth() {
-        return yearOfBirth;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setYearOfBirth(int yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
-    }
-
-    public String getMonthOfBirth() {
-        return monthOfBirth;
-    }
-
-    public void setMonthOfBirth(String monthOfBirth) {
-        this.monthOfBirth = monthOfBirth;
-    }
-
-    public int getDayOfBirth() {
-        return dayOfBirth;
-    }
-
-    public void setDayOfBirth(int dayOfBirth) {
-        this.dayOfBirth = dayOfBirth;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getSubject() {
@@ -98,6 +82,14 @@ public class Student {
 
     public void setHobby(int hobby) {
         this.hobby = hobby;
+    }
+
+    public String getPictureName() {
+        return pictureName;
+    }
+
+    public void setPictureName(String pictureName) {
+        this.pictureName = pictureName;
     }
 
     public String getCurrentAddress() {
@@ -124,6 +116,14 @@ public class Student {
         this.city = city;
     }
 
+    public String getStateAndCity() {
+        return stateAndCity;
+    }
+
+    public void setStateAndCity(String stateAndCity) {
+        this.stateAndCity = stateAndCity;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -132,39 +132,17 @@ public class Student {
         Student student = (Student) o;
 
         if (gender != student.gender) return false;
-        if (yearOfBirth != student.yearOfBirth) return false;
-        if (dayOfBirth != student.dayOfBirth) return false;
         if (hobby != student.hobby) return false;
         if (!firstName.equals(student.firstName)) return false;
         if (!lastName.equals(student.lastName)) return false;
         if (!Objects.equals(email, student.email)) return false;
-        if (!Objects.equals(mobileNumber, student.mobileNumber))
-            return false;
-        if (!Objects.equals(monthOfBirth, student.monthOfBirth))
-            return false;
+        if (!mobileNumber.equals(student.mobileNumber)) return false;
+        if (!dateOfBirth.equals(student.dateOfBirth)) return false;
         if (!Objects.equals(subject, student.subject)) return false;
+        if (!Objects.equals(pictureName, student.pictureName)) return false;
         if (!Objects.equals(currentAddress, student.currentAddress))
             return false;
-        if (!Objects.equals(state, student.state)) return false;
-        return Objects.equals(city, student.city);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = firstName.hashCode();
-        result = 31 * result + lastName.hashCode();
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + gender;
-        result = 31 * result + (mobileNumber != null ? mobileNumber.hashCode() : 0);
-        result = 31 * result + yearOfBirth;
-        result = 31 * result + (monthOfBirth != null ? monthOfBirth.hashCode() : 0);
-        result = 31 * result + dayOfBirth;
-        result = 31 * result + (subject != null ? subject.hashCode() : 0);
-        result = 31 * result + hobby;
-        result = 31 * result + (currentAddress != null ? currentAddress.hashCode() : 0);
-        result = 31 * result + (state != null ? state.hashCode() : 0);
-        result = 31 * result + (city != null ? city.hashCode() : 0);
-        return result;
+        return Objects.equals(stateAndCity, student.stateAndCity);
     }
 
     @Override
@@ -175,14 +153,14 @@ public class Student {
                 ", email='" + email + '\'' +
                 ", gender=" + gender +
                 ", mobileNumber='" + mobileNumber + '\'' +
-                ", yearOfBirth=" + yearOfBirth +
-                ", monthOfBirth=" + monthOfBirth +
-                ", dayOfBirth=" + dayOfBirth +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", subject='" + subject + '\'' +
                 ", hobby=" + hobby +
+                ", pictureName='" + pictureName + '\'' +
                 ", currentAddress='" + currentAddress + '\'' +
                 ", state='" + state + '\'' +
                 ", city='" + city + '\'' +
+                ", stateAndCity='" + stateAndCity + '\'' +
                 '}';
     }
 }

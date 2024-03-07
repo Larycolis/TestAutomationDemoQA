@@ -1,7 +1,9 @@
 package ui.forms;
 
 import com.codeborne.selenide.Configuration;
+import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.base.FormPage;
 import org.base.ModalWindowForm;
 import org.entity.Student;
@@ -12,15 +14,16 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
+import static org.provider.StudentProvider.*;
 
 public class PracticeFormTests {
-    private static final String FIRST_NAME_VALUE = "TestFirstName";
-    private static final String LAST_NAME_VALUE = "TestLastName";
-    private static final String USER_NUMBER_VALUE = "0123456789";
-    private static final String EMAIL_VALUE = "test_demoqa@gmail.com";
-    private static final String USER_CURRANT_ADDRESS_VALUE = "66 Perry Street, NYC";
+    private final Faker faker = new Faker();
 
     @BeforeEach
     void setUp() {
@@ -29,18 +32,9 @@ public class PracticeFormTests {
         open("https://demoqa.com/automation-practice-form");
     }
 
-    // Todo: вынести студента с более повторяемыми полями в методах добавлять параметры в этого студента (чёт не получится, наверное)
     @Test
-    void fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest() {
-        Student testStudent = new StudentBuilder()
-                .firstName(FIRST_NAME_VALUE)
-                .lastName(LAST_NAME_VALUE)
-                .gender(1)
-                .mobileNumber(USER_NUMBER_VALUE)
-                .yearOfBirth(1991)
-                .monthOfBirth("March")
-                .dayOfBirth(11)
-                .build();
+    void fillAllRequiredFieldsAndCheckExpectedMatchesActualTest() {
+        Student testStudent = getStudentWithRequiredFields();
         page(FormPage.class)
                 .inputFirstName(testStudent)
                 .inputLastName(testStudent)
@@ -49,17 +43,111 @@ public class PracticeFormTests {
                 .inputDateOfBirth()
                 .submitRegistrationForm();
         page(ModalWindowForm.class)
-                .checkModalWindowIsVisible()
+                .compareActualAndExpectedStudent(testStudent);
+    }
+
+    @Test
+    void fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest() {
+        Student testStudent = getStudentWithAllFieldsWithoutUpload()
+                .subject("English")
+                .state("Uttar Pradesh")
+                .city("Agra")
+                .stateAndCity("Uttar Pradesh Agra")
+                .build();
+        page(FormPage.class)
+                .inputFirstName(testStudent)
+                .inputLastName(testStudent)
+                .inputEmail(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
+                .inputDateOfBirth()
+                .inputSubjects(testStudent)
+                .selectHobbies(testStudent)
+                .inputCurrentAddress(testStudent)
+                .inputLocation(testStudent)
+                .submitRegistrationForm();
+        page(ModalWindowForm.class)
+                .compareActualAndExpectedStudent(testStudent);
+    }
+
+    @Test
+    void fillAllFieldsWithUploadAndCheckExpectedMatchesActualTest() {
+        String fullPath = generateTempFile(".jpg");
+        String pictureName = getFileName(fullPath);
+        Student testStudent = getStudentWithAllFieldsWithUpload("English", pictureName, "Uttar Pradesh", "Agra");
+        page(FormPage.class)
+                .inputFirstName(testStudent)
+                .inputLastName(testStudent)
+                .inputEmail(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
+                .inputDateOfBirth()
+                .inputSubjects(testStudent)
+                .selectHobbies(testStudent)
+                .uploadFile(fullPath)
+                .inputCurrentAddress(testStudent)
+                .inputLocation(testStudent)
+                .submitRegistrationForm();
+        page(ModalWindowForm.class)
                 .compareActualAndExpectedStudent(testStudent);
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {1, 2, 3})
-    void fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest(int gender) {
+    @CsvSource({"English, NCR, Delhi", "Biology, Uttar Pradesh, Agra",
+            "History, Rajasthan, Jaiselmer", "Physics, Haryana, Panipat"})
+    void fillAllFieldsVariantsWithoutUploadAndCheckExpectedMatchesActualTest(String subject, String state, String city) {
+        Student testStudent = getStudentWithAllFieldsWithoutUpload()
+                .subject(subject)
+                .state(state)
+                .city(city)
+                .stateAndCity(state + " " + city)
+                .build();
+        page(FormPage.class)
+                .inputFirstName(testStudent)
+                .inputLastName(testStudent)
+                .inputEmail(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
+                .inputDateOfBirth()
+                .inputSubjects(testStudent)
+                .selectHobbies(testStudent)
+                .inputCurrentAddress(testStudent)
+                .inputLocation(testStudent)
+                .submitRegistrationForm();
+        page(ModalWindowForm.class)
+                .compareActualAndExpectedStudent(testStudent);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"English, .jpg, NCR, Delhi", "Biology, .pdf, Uttar Pradesh, Agra",
+            "History, .tif, Rajasthan, Jaiselmer", "Physics, .bmp, Haryana, Panipat"})
+    void fillAllFieldsVariantsWithUploadAndCheckExpectedMatchesActualTest(String subject, String ext, String state, String city) {
+        String fullPath = generateTempFile(ext);
+        String pictureName = getFileName(fullPath);
+        Student testStudent = getStudentWithAllFieldsWithUpload(subject, pictureName, state, city);
+        page(FormPage.class)
+                .inputFirstName(testStudent)
+                .inputLastName(testStudent)
+                .inputEmail(testStudent)
+                .selectGender(testStudent)
+                .inputUserNumber(testStudent)
+                .inputDateOfBirth()
+                .inputSubjects(testStudent)
+                .selectHobbies(testStudent)
+                .uploadFile(fullPath)
+                .inputCurrentAddress(testStudent)
+                .inputLocation(testStudent)
+                .submitRegistrationForm();
+        page(ModalWindowForm.class)
+                .compareActualAndExpectedStudent(testStudent);
+    }
+
+    @Test
+    void fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest() {
         Student testStudent = new StudentBuilder()
-                .lastName(LAST_NAME_VALUE)
-                .gender(gender)
-                .mobileNumber(USER_NUMBER_VALUE)
+                .lastName(faker.name().lastName())
+                .gender(getRandomNumber())
+                .mobileNumber(faker.phoneNumber().subscriberNumber(10))
                 .build();
         page(FormPage.class)
                 .inputLastName(testStudent)
@@ -69,13 +157,12 @@ public class PracticeFormTests {
                 .checkFirstNameWarningActivity();
     }
 
-    @ParameterizedTest
-    @ValueSource(ints = {1, 2, 3})
-    void fillRequiredFieldsExceptionOfLastNameAndCheckWarningTest(int gender) {
+    @Test
+    void fillRequiredFieldsExceptionOfLastNameAndCheckWarningTest() {
         Student testStudent = new StudentBuilder()
-                .firstName(FIRST_NAME_VALUE)
-                .gender(gender)
-                .mobileNumber(USER_NUMBER_VALUE)
+                .firstName(faker.name().firstName())
+                .gender(getRandomNumber())
+                .mobileNumber(faker.phoneNumber().subscriberNumber(10))
                 .build();
         page(FormPage.class)
                 .inputFirstName(testStudent)
@@ -86,12 +173,13 @@ public class PracticeFormTests {
     }
 
     @ParameterizedTest
-    @CsvSource({"1, 012345678", "2, Number", "3, !@#&^"})
-    void fillRequiredFieldsExceptionOfUserNumberAndCheckWarningTest(int gender, String userNumber) {
+    @ValueSource(strings = {"012345678", "Number", "!@#&^"})
+        //с провайдером
+    void fillRequiredFieldsExceptionOfUserNumberAndCheckWarningTest(String userNumber) {
         Student testStudent = new StudentBuilder()
-                .firstName(FIRST_NAME_VALUE)
-                .lastName(LAST_NAME_VALUE)
-                .gender(gender)
+                .firstName(faker.name().firstName())
+                .lastName(faker.name().lastName())
+                .gender(getRandomNumber())
                 .mobileNumber(userNumber)
                 .build();
         page(FormPage.class)
@@ -106,9 +194,9 @@ public class PracticeFormTests {
     @Test
     void fillRequiredFieldsExceptionOfGenderAndCheckWarningTest() {
         Student testStudent = new StudentBuilder()
-                .firstName(FIRST_NAME_VALUE)
-                .lastName(LAST_NAME_VALUE)
-                .mobileNumber(USER_NUMBER_VALUE)
+                .firstName(faker.name().firstName())
+                .lastName(faker.name().lastName())
+                .mobileNumber(faker.phoneNumber().subscriberNumber(10))
                 .build();
         page(FormPage.class)
                 .inputFirstName(testStudent)
@@ -128,117 +216,15 @@ public class PracticeFormTests {
                 .checkUserNumberWarningActivity();
     }
 
-    @ParameterizedTest
-    @CsvSource({"1, 1991, March, 11, English, 2, NCR, Delhi",
-            "3, 1991, March, 11, Biology, 1, Haryana, Karnal",
-            "2, 1991, March, 11, History, 3, Rajasthan, Jaiselmer",
-            "1, 1991, March, 11, Physics, 3, Haryana, Panipat"})
-    void fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest(int gender, int year, String month, int day,
-                                                                    String subject, int hobby, String state,
-                                                                    String city) {
-        Student testStudent = new StudentBuilder()
-                .firstName(FIRST_NAME_VALUE)
-                .lastName(LAST_NAME_VALUE)
-                .email(EMAIL_VALUE)
-                .gender(gender)
-                .mobileNumber(USER_NUMBER_VALUE)
-                .yearOfBirth(year)
-                .monthOfBirth(month)
-                .dayOfBirth(day)
-                .subject(subject)
-                .hobby(hobby)
-                .currentAddress(USER_CURRANT_ADDRESS_VALUE)
-                .state(state)
-                .city(city)
-                .build();
-        page(FormPage.class)
-                .inputFirstName(testStudent)
-                .inputLastName(testStudent)
-                .inputEmail(testStudent)
-                .selectGender(testStudent)
-                .inputUserNumber(testStudent)
-                .inputDateOfBirth() //Todo: подумать про LocalDateTime и работать с полной датой: год, месяц, день
-                .inputSubjects(testStudent)
-                .selectHobbies(testStudent)
-                .inputCurrentAddress(testStudent)
-                .inputLocation(testStudent) //Todo: надо подумать как использовать enum StateValue, CityValue
-                .submitRegistrationForm();
-        page(ModalWindowForm.class)
-                .checkModalWindowIsVisible()
-                .compareActualAndExpectedStudent(testStudent);
+    private String generateTempFile(String ext) {
+        try {
+            return Files.createTempFile(RandomStringUtils.randomAlphanumeric(5), ext).toString();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    @ParameterizedTest
-    @CsvSource({"1, 1991, March, 11, English, 2, .jpg, NCR, Delhi",
-            "3, 1991, March, 11, Biology, 1, .pdf, Uttar Pradesh, Agra",
-            "2, 1991, March, 11, History, 3, .tif, Rajasthan, Jaiselmer",
-            "1, 1991, March, 11, Physics, 3, .bmp, Haryana, Panipat"})
-    void fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest(int gender, int year, String month, int day,
-                                                                 String subject, int hobby, String ext, String state,
-                                                                 String city) {
-        Student testStudent = new StudentBuilder()
-                .firstName(FIRST_NAME_VALUE)
-                .lastName(LAST_NAME_VALUE)
-                .email(EMAIL_VALUE)
-                .gender(gender)
-                .mobileNumber(USER_NUMBER_VALUE)
-                .yearOfBirth(year)
-                .monthOfBirth(month)
-                .dayOfBirth(day)
-                .subject(subject)
-                .hobby(hobby)
-                .currentAddress(USER_CURRANT_ADDRESS_VALUE)
-                .state(state)
-                .city(city)
-                .build();
-        page(FormPage.class)
-                .inputFirstName(testStudent)
-                .inputLastName(testStudent)
-                .inputEmail(testStudent)
-                .selectGender(testStudent)
-                .inputUserNumber(testStudent)
-                .inputDateOfBirth() //Todo: подумать про LocalDateTime и работать с полной датой: год, месяц, день
-                .inputSubjects(testStudent)
-                .selectHobbies(testStudent)
-                .uploadFile(ext)
-                .inputCurrentAddress(testStudent)
-                .inputLocation(testStudent) //Todo: надо подумать как использовать enum StateValue, CityValue
-                .submitRegistrationForm();
-        page(ModalWindowForm.class)
-                .checkModalWindowIsVisible();
-    }
-
-    @Test
-    void Test() {
-        Student testStudent = new StudentBuilder()
-                .firstName(FIRST_NAME_VALUE)
-                .lastName(LAST_NAME_VALUE)
-                .email(EMAIL_VALUE)
-                .gender(1)
-                .mobileNumber(USER_NUMBER_VALUE)
-                .yearOfBirth(1991)
-                .monthOfBirth("March")
-                .dayOfBirth(11)
-                .subject("English")
-                .hobby(1)
-                .currentAddress(USER_CURRANT_ADDRESS_VALUE)
-                .state("NCR")
-                .city("Delhi")
-                .build();
-        page(FormPage.class)
-                .inputFirstName(testStudent)
-                .inputLastName(testStudent)
-                .inputEmail(testStudent)
-                .selectGender(testStudent)
-                .inputUserNumber(testStudent)
-                .inputDateOfBirth() //Todo: подумать про LocalDateTime и работать с полной датой: год, месяц, день
-                .inputSubjects(testStudent)
-                .selectHobbies(testStudent)
-                .inputCurrentAddress(testStudent)
-                .inputLocation(testStudent) //Todo: надо подумать как использовать enum StateValue, CityValue
-                .submitRegistrationForm();
-        page(ModalWindowForm.class)
-                .checkModalWindowIsVisible()
-                .compareActualAndExpectedStudent(testStudent);
+    private String getFileName(String fullPath) {
+        return new File(fullPath).getName();
     }
 }

@@ -6,17 +6,10 @@ import org.junit.jupiter.api.Assertions;
 
 import java.util.List;
 
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class ModalWindowForm {
     private static final String REGEX = "[,\\s]+";
-
-    public ModalWindowForm checkModalWindowIsVisible() {
-        $("div.modal-content").shouldBe(visible);
-        return this;
-    }
 
     public void compareActualAndExpectedStudent(Student expectedStudent) {
         Assertions.assertEquals(expectedStudent, getActualStudent());
@@ -40,9 +33,7 @@ public class ModalWindowForm {
                 studentBuilder.mobileNumber(actualStudentValues.get(3));
             }
             if (!actualStudentValues.get(4).isEmpty()) {
-                studentBuilder.yearOfBirth(getSplittedIntValue(actualStudentValues.get(4), 2));
-                studentBuilder.monthOfBirth(getSplittedStringValue(actualStudentValues.get(4), 1));
-                studentBuilder.dayOfBirth(getSplittedIntValue(actualStudentValues.get(4), 0));
+                studentBuilder.dateOfBirth(actualStudentValues.get(4));
             }
             if (!actualStudentValues.get(5).isEmpty()) {
                 studentBuilder.subject(actualStudentValues.get(5));
@@ -50,13 +41,14 @@ public class ModalWindowForm {
             if (!actualStudentValues.get(6).isEmpty()) {
                 studentBuilder.hobby(getHobby(actualStudentValues.get(6)));
             }
-            //if (!actualStudentValues.get(7).isEmpty() && actualStudentValues.get(7) != null)
+            if (!actualStudentValues.get(7).isEmpty()) {
+                studentBuilder.pictureName(actualStudentValues.get(7));
+            }
             if (!actualStudentValues.get(8).isEmpty()) {
                 studentBuilder.currentAddress(actualStudentValues.get(8));
             }
             if (!actualStudentValues.get(9).isEmpty()) {
-                studentBuilder.state(getSplittedStringValue(actualStudentValues.get(9), 0));
-                studentBuilder.city(getSplittedStringValue(actualStudentValues.get(9), 1));
+                studentBuilder.stateAndCity(actualStudentValues.get(9));
             }
         }
         return studentBuilder.build();
@@ -64,10 +56,6 @@ public class ModalWindowForm {
 
     private String getSplittedStringValue(String values, int index) {
         return values.split(REGEX)[index];
-    }
-
-    private int getSplittedIntValue(String dateValues, int index) {
-        return Integer.parseInt(dateValues.split(REGEX)[index]);
     }
 
     private int getGender(String genderValue) {

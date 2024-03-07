@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="comparing expected and actual object">
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="comparing expected and actual object iteration2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/provider/StudentProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/FormPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" afterDir="false" />
@@ -113,7 +114,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillAllFieldsVariantsWithUploadAndCheckExpectedMatchesActualTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -126,7 +127,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.Test&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsVariantsWithUploadAndCheckExpectedMatchesActualTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -137,7 +138,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillAllFieldsWithUploadAndCheckExpectedMatchesActualTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -150,7 +151,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsWithUploadAndCheckExpectedMatchesActualTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -161,7 +162,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -174,7 +175,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -185,7 +186,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -198,7 +199,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -225,10 +226,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.PracticeFormTests" />
-        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithUploadAndCheckModalWindowIsVisibleTest" />
-        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckModalWindowIsVisibleTest" />
-        <item itemvalue="Gradle.PracticeFormTests.Test" />
-        <item itemvalue="Gradle.PracticeFormTests.fillAllRequiredFieldsAndCheckModalWindowIsVisibleTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsVariantsWithUploadAndCheckExpectedMatchesActualTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithUploadAndCheckExpectedMatchesActualTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest" />
       </list>
     </recent_temporary>
   </component>
@@ -425,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709674779280</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="comparing expected and actual object iteration2">
+      <option name="closed" value="true" />
+      <created>1709726747079</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1709726747079</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -463,6 +472,7 @@
     <MESSAGE value="Implementation Builder Design Pattern" />
     <MESSAGE value="moving getters to test methods" />
     <MESSAGE value="comparing expected and actual object" />
-    <option name="LAST_COMMIT_MESSAGE" value="comparing expected and actual object" />
+    <MESSAGE value="comparing expected and actual object iteration2" />
+    <option name="LAST_COMMIT_MESSAGE" value="comparing expected and actual object iteration2" />
   </component>
 </project>
