@@ -5,51 +5,44 @@ import org.entity.Student;
 import org.helper.StudentBuilder;
 
 public class StudentProvider {
-    //TODO: создать приватные методы для заполнения повторяющихся полей
+    //TODO: создать обертку над Faker
     private static final Faker FAKER = new Faker();
     private static final String DATE_OF_BIRTH = "11 March,1991";
 
     public static Student getStudentWithRequiredFields() {
-        return new StudentBuilder()
-                .firstName(FAKER.name().firstName())
-                .lastName(FAKER.name().lastName())
-                .mobileNumber(FAKER.phoneNumber().subscriberNumber(10))
-                .dateOfBirth(DATE_OF_BIRTH)
-                .gender(getRandomNumber())
-                .build();
+        return createStudentWithRequiredFields().build();
     }
 
     public static StudentBuilder getStudentWithAllFieldsWithoutUpload() {
-        return new StudentBuilder()
-                .firstName(FAKER.name().firstName())
-                .lastName(FAKER.name().lastName())
+        return createStudentWithRequiredFields()
                 .email(FAKER.internet().emailAddress())
-                .gender(getRandomNumber())
-                .mobileNumber(FAKER.phoneNumber().subscriberNumber(10))
-                .dateOfBirth(DATE_OF_BIRTH)
                 .hobby(getRandomNumber())
                 .currentAddress(FAKER.address().fullAddress());
     }
 
-    public static Student getStudentWithAllFieldsWithUpload(String subject, String pictureName, String state, String city) {
-        return new StudentBuilder()
-                .firstName(FAKER.name().firstName())
-                .lastName(FAKER.name().lastName())
+    public static Student getStudentWithAllFieldsWithUpload(String ... params) {
+        return createStudentWithRequiredFields()
                 .email(FAKER.internet().emailAddress())
-                .gender(getRandomNumber())
-                .mobileNumber(FAKER.phoneNumber().subscriberNumber(10))
-                .dateOfBirth(DATE_OF_BIRTH)
-                .subject(subject)
+                .subject(params[0])
                 .hobby(getRandomNumber())
-                .pictureName(pictureName)
+                .pictureName(params[1])
                 .currentAddress(FAKER.address().fullAddress())
-                .state(state)
-                .city(city)
-                .stateAndCity(state + " " + city)
+                .state(params[2])
+                .city(params[3])
+                .stateAndCity(params[2] + " " + params[3])
                 .build();
     }
 
     public static int getRandomNumber(){
         return FAKER.number().numberBetween(1, 3);
+    }
+
+    private static StudentBuilder createStudentWithRequiredFields() {
+        return new StudentBuilder()
+                .firstName(FAKER.name().firstName())
+                .lastName(FAKER.name().lastName())
+                .mobileNumber(FAKER.phoneNumber().subscriberNumber(10))
+                .dateOfBirth(DATE_OF_BIRTH)
+                .gender(getRandomNumber());
     }
 }
