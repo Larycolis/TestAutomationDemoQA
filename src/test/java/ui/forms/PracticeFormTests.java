@@ -1,13 +1,10 @@
 package ui.forms;
 
 import com.codeborne.selenide.Configuration;
-import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.base.FormPage;
 import org.base.ModalWindowForm;
 import org.entity.Student;
-import org.helper.StudentBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -15,20 +12,23 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
 
+import static com.codeborne.selenide.Configuration.headless;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static org.provider.StudentProvider.*;
+import static org.util.FakerUtil.*;
 
 public class PracticeFormTests {
-    private final Faker faker = new Faker();
+    private final String subject = "English";
+    private final String state = "Uttar Pradesh";
+    private final String city = "Agra";
 
     @BeforeEach
     void setUp() {
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
+        headless = true;
         open("https://demoqa.com/automation-practice-form");
     }
 
@@ -49,10 +49,10 @@ public class PracticeFormTests {
     @Test
     void fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest() {
         Student testStudent = getStudentWithAllFieldsWithoutUpload()
-                .subject("English")
-                .state("Uttar Pradesh")
-                .city("Agra")
-                .stateAndCity("Uttar Pradesh Agra")
+                .subject(subject)
+                .state(state)
+                .city(city)
+                .stateAndCity(state + " " + city)
                 .build();
         page(FormPage.class)
                 .inputFirstName(testStudent)
@@ -74,7 +74,7 @@ public class PracticeFormTests {
     void fillAllFieldsWithUploadAndCheckExpectedMatchesActualTest() {
         String fullPath = generateTempFile(".jpg");
         String pictureName = getFileName(fullPath);
-        Student testStudent = getStudentWithAllFieldsWithUpload("English", pictureName, "Uttar Pradesh", "Agra");
+        Student testStudent = getStudentWithAllFieldsWithUpload(subject, pictureName, state, city);
         page(FormPage.class)
                 .inputFirstName(testStudent)
                 .inputLastName(testStudent)
@@ -144,10 +144,10 @@ public class PracticeFormTests {
 
     @Test
     void fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest() {
-        Student testStudent = new StudentBuilder()
-                .lastName(faker.name().lastName())
+        Student testStudent = Student.builder()
+                .lastName(getLastName())
                 .gender(getRandomNumber())
-                .mobileNumber(faker.phoneNumber().subscriberNumber(10))
+                .mobileNumber(getMobilNumber())
                 .build();
         page(FormPage.class)
                 .inputLastName(testStudent)
@@ -159,10 +159,10 @@ public class PracticeFormTests {
 
     @Test
     void fillRequiredFieldsExceptionOfLastNameAndCheckWarningTest() {
-        Student testStudent = new StudentBuilder()
-                .firstName(faker.name().firstName())
+        Student testStudent = Student.builder()
+                .firstName(getFirstName())
                 .gender(getRandomNumber())
-                .mobileNumber(faker.phoneNumber().subscriberNumber(10))
+                .mobileNumber(getMobilNumber())
                 .build();
         page(FormPage.class)
                 .inputFirstName(testStudent)
@@ -174,11 +174,10 @@ public class PracticeFormTests {
 
     @ParameterizedTest
     @ValueSource(strings = {"012345678", "Number", "!@#&^"})
-        //с провайдером
     void fillRequiredFieldsExceptionOfUserNumberAndCheckWarningTest(String userNumber) {
-        Student testStudent = new StudentBuilder()
-                .firstName(faker.name().firstName())
-                .lastName(faker.name().lastName())
+        Student testStudent = Student.builder()
+                .firstName(getFirstName())
+                .lastName(getLastName())
                 .gender(getRandomNumber())
                 .mobileNumber(userNumber)
                 .build();
@@ -193,10 +192,10 @@ public class PracticeFormTests {
 
     @Test
     void fillRequiredFieldsExceptionOfGenderAndCheckWarningTest() {
-        Student testStudent = new StudentBuilder()
-                .firstName(faker.name().firstName())
-                .lastName(faker.name().lastName())
-                .mobileNumber(faker.phoneNumber().subscriberNumber(10))
+        Student testStudent = Student.builder()
+                .firstName(getFirstName())
+                .lastName(getLastName())
+                .mobileNumber(getMobilNumber())
                 .build();
         page(FormPage.class)
                 .inputFirstName(testStudent)
@@ -214,14 +213,6 @@ public class PracticeFormTests {
                 .checkLastNameWarningActivity()
                 .checkGenderWarningActivity()
                 .checkUserNumberWarningActivity();
-    }
-
-    private String generateTempFile(String ext) {
-        try {
-            return Files.createTempFile(RandomStringUtils.randomAlphanumeric(5), ext).toString();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     private String getFileName(String fullPath) {

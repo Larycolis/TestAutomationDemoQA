@@ -28,6 +28,7 @@ public class BaseTest {
     @BeforeAll
     public static void beforeAll() {
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
         HashMap<String, Object> chromePref = new HashMap<>();
         chromePref.put("download.default_directory", "D:\\Downloads");
         options.setExperimentalOption("prefs", chromePref);

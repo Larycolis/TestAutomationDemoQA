@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="Stringbuilder, uploadCheck implementations">
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="filling required fields in a separate method">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/FakerUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/entity/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/helper/StudentBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/provider/StudentProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/provider/StudentProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +67,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -83,7 +93,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.PracticeFormTests">
+  <component name="RunManager" selected="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest">
     <configuration name="PracticeFormTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -98,6 +108,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;ui.forms.PracticeFormTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PracticeFormTests.clickSubmitWithoutFillingOutTheFormFieldsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ui.forms.PracticeFormTests.clickSubmitWithoutFillingOutTheFormFieldsTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -180,30 +214,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="TestAutomationUI" />
       <method v="2">
@@ -219,11 +229,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest" />
+        <item itemvalue="Gradle.PracticeFormTests.clickSubmitWithoutFillingOutTheFormFieldsTest" />
         <item itemvalue="Gradle.PracticeFormTests" />
         <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsVariantsWithUploadAndCheckExpectedMatchesActualTest" />
         <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithUploadAndCheckExpectedMatchesActualTest" />
-        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest" />
-        <item itemvalue="Gradle.PracticeFormTests.fillRequiredFieldsExceptionOfFirstNameAndCheckWarningTest" />
       </list>
     </recent_temporary>
   </component>
@@ -436,7 +446,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709851601207</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="filling required fields in a separate method">
+      <option name="closed" value="true" />
+      <created>1709897046547</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1709897046547</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -451,7 +469,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Development of project structure and test classes" />
     <MESSAGE value="Making corrections based on code review comments" />
     <MESSAGE value="Making corrections based on code review comments(2)" />
     <MESSAGE value="Making corrections based on code review comments(3)" />
@@ -476,6 +493,7 @@
     <MESSAGE value="comparing expected and actual object" />
     <MESSAGE value="comparing expected and actual object iteration2" />
     <MESSAGE value="Stringbuilder, uploadCheck implementations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stringbuilder, uploadCheck implementations" />
+    <MESSAGE value="filling required fields in a separate method" />
+    <option name="LAST_COMMIT_MESSAGE" value="filling required fields in a separate method" />
   </component>
 </project>

@@ -1,7 +1,6 @@
 package org.base;
 
 import org.entity.Student;
-import org.helper.StudentBuilder;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.List;
@@ -16,7 +15,7 @@ public class ModalWindowForm {
     }
 
     private Student getActualStudent() {
-        StudentBuilder studentBuilder = new StudentBuilder();
+        Student.StudentBuilder studentBuilder = Student.builder();
         List<String> actualStudentValues = $$("tbody > tr > td:nth-child(2)").texts();
         for (int i = 0; i < actualStudentValues.size(); i++) {
             if (!actualStudentValues.get(0).isEmpty()) {
