@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,6 +29,7 @@ public class BaseTest {
     @BeforeAll
     public static void beforeAll() {
         ChromeOptions options = new ChromeOptions();
+        options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT);
         options.addArguments("--headless=new");
         HashMap<String, Object> chromePref = new HashMap<>();
         chromePref.put("download.default_directory", "D:\\Downloads");

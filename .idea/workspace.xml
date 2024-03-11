@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="filling required fields in a separate method">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/FakerUtil.java" afterDir="false" />
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="add Lombok and dependency, add headless browser mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/ModalWindowForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/entity/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/helper/StudentBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/provider/StudentProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/provider/StudentProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/forms/PracticeFormTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/AlertTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/AlertTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,21 +75,21 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/IDEA_projects/lenta_automation_UI&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/IDEA_projects/lenta_automation_UI",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest">
-    <configuration name="PracticeFormTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+}]]></component>
+  <component name="RunManager" selected="Gradle.TestAutomationDemoQA [clean]">
+    <configuration name="AlertTests.clickAlertButtonCheckAndCloseAlertOkTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -107,7 +102,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests&quot;" />
+            <option value="&quot;ui.alertsWindows.AlertTests.clickAlertButtonCheckAndCloseAlertOkTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -118,7 +113,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.clickSubmitWithoutFillingOutTheFormFieldsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PracticeFormTests.fillAllRequiredFieldsAndCheckExpectedMatchesActualTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -131,7 +126,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.clickSubmitWithoutFillingOutTheFormFieldsTest&quot;" />
+            <option value="&quot;ui.forms.PracticeFormTests.fillAllRequiredFieldsAndCheckExpectedMatchesActualTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -142,76 +137,70 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillAllFieldsVariantsWithUploadAndCheckExpectedMatchesActualTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestAutomationDemoQA [allureReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsVariantsWithUploadAndCheckExpectedMatchesActualTest&quot;" />
+            <option value="allureReport" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillAllFieldsWithUploadAndCheckExpectedMatchesActualTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestAutomationDemoQA [allureServe]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsWithUploadAndCheckExpectedMatchesActualTest&quot;" />
+            <option value="allureServe" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestAutomationDemoQA [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest&quot;" />
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -229,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithoutUploadAndCheckExpectedMatchesActualTest" />
-        <item itemvalue="Gradle.PracticeFormTests.clickSubmitWithoutFillingOutTheFormFieldsTest" />
-        <item itemvalue="Gradle.PracticeFormTests" />
-        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsVariantsWithUploadAndCheckExpectedMatchesActualTest" />
-        <item itemvalue="Gradle.PracticeFormTests.fillAllFieldsWithUploadAndCheckExpectedMatchesActualTest" />
+        <item itemvalue="Gradle.TestAutomationDemoQA [clean]" />
+        <item itemvalue="Gradle.TestAutomationDemoQA [allureServe]" />
+        <item itemvalue="Gradle.TestAutomationDemoQA [allureReport]" />
+        <item itemvalue="Gradle.AlertTests.clickAlertButtonCheckAndCloseAlertOkTest" />
+        <item itemvalue="Gradle.PracticeFormTests.fillAllRequiredFieldsAndCheckExpectedMatchesActualTest" />
       </list>
     </recent_temporary>
   </component>
@@ -454,7 +443,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709897046547</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add Lombok and dependency, add headless browser mode">
+      <option name="closed" value="true" />
+      <created>1709905344561</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1709905344561</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -469,7 +466,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Making corrections based on code review comments" />
     <MESSAGE value="Making corrections based on code review comments(2)" />
     <MESSAGE value="Making corrections based on code review comments(3)" />
     <MESSAGE value="Creating a BrokenLinksImagesTest class" />
@@ -494,6 +490,7 @@
     <MESSAGE value="comparing expected and actual object iteration2" />
     <MESSAGE value="Stringbuilder, uploadCheck implementations" />
     <MESSAGE value="filling required fields in a separate method" />
-    <option name="LAST_COMMIT_MESSAGE" value="filling required fields in a separate method" />
+    <MESSAGE value="add Lombok and dependency, add headless browser mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Lombok and dependency, add headless browser mode" />
   </component>
 </project>
