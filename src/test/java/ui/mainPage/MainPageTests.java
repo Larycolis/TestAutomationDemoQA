@@ -22,7 +22,7 @@ public class MainPageTests extends BaseTest {
 
     @Test
     void clickBannerImageAndCheckSeleniumTrainingPageOpenedTest() {
-        getDriver().findElement(By.className("banner-image")).click();
+        clickJavascriptExecutor(getDriver().findElement(By.className("banner-image")));
         getDriver().switchTo().window(getDriver().getWindowHandles().toArray()[1].toString());
         getWebDriverWait().until(ExpectedConditions.titleIs("Tools QA - Selenium Training"));
     }
