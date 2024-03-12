@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="add Lombok and dependency, add headless browser mode">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/AlertTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/AlertTests.java" afterDir="false" />
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation allure annotations in ModalDialogs test class">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/ModalDialogsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/ModalDialogsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/BrokenLinksImagesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/BrokenLinksImagesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,21 +75,21 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/IDEA_projects/lenta_automation_UI",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/IDEA_projects/lenta_automation_UI&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.TestAutomationDemoQA [clean]">
-    <configuration name="AlertTests.clickAlertButtonCheckAndCloseAlertOkTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+}</component>
+  <component name="RunManager" selected="Gradle.BrokenLinksImagesTest.clickInvalidLinkAndCheckRelevantPageNotOpenedTest">
+    <configuration name="BrokenLinksImagesTest.clickInvalidLinkAndCheckRelevantPageNotOpenedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -102,7 +102,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.AlertTests.clickAlertButtonCheckAndCloseAlertOkTest&quot;" />
+            <option value="&quot;ui.elements.BrokenLinksImagesTest.clickInvalidLinkAndCheckRelevantPageNotOpenedTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -113,7 +113,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PracticeFormTests.fillAllRequiredFieldsAndCheckExpectedMatchesActualTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BrokenLinksImagesTest.clickValidLinkAndCheckRelevantPageOpenedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -126,7 +126,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.forms.PracticeFormTests.fillAllRequiredFieldsAndCheckExpectedMatchesActualTest&quot;" />
+            <option value="&quot;ui.elements.BrokenLinksImagesTest.clickValidLinkAndCheckRelevantPageOpenedTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -218,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BrokenLinksImagesTest.clickInvalidLinkAndCheckRelevantPageNotOpenedTest" />
         <item itemvalue="Gradle.TestAutomationDemoQA [clean]" />
+        <item itemvalue="Gradle.BrokenLinksImagesTest.clickValidLinkAndCheckRelevantPageOpenedTest" />
         <item itemvalue="Gradle.TestAutomationDemoQA [allureServe]" />
         <item itemvalue="Gradle.TestAutomationDemoQA [allureReport]" />
-        <item itemvalue="Gradle.AlertTests.clickAlertButtonCheckAndCloseAlertOkTest" />
-        <item itemvalue="Gradle.PracticeFormTests.fillAllRequiredFieldsAndCheckExpectedMatchesActualTest" />
       </list>
     </recent_temporary>
   </component>
@@ -451,7 +451,63 @@
       <option name="project" value="LOCAL" />
       <updated>1709905344561</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Implemented Allure, accept unexpected alert behaviour, extract acceptance into a separate method in Alert page tests">
+      <option name="closed" value="true" />
+      <created>1710158730005</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1710158730005</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Fix cssSelector value">
+      <option name="closed" value="true" />
+      <created>1710238253063</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1710238253063</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added base method clickJavascriptExecutor">
+      <option name="closed" value="true" />
+      <created>1710242176047</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1710242176047</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Fix selectors">
+      <option name="closed" value="true" />
+      <created>1710244304780</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1710244304780</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fix selectors and minor changes in invalidLinkTest">
+      <option name="closed" value="true" />
+      <created>1710247859786</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1710247859786</updated>
+    </task>
+    <task id="LOCAL-00033" summary="implementation allure annotations in BrowserWindows test class">
+      <option name="closed" value="true" />
+      <created>1710250789464</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1710250789464</updated>
+    </task>
+    <task id="LOCAL-00034" summary="implementation allure annotations in ModalDialogs test class">
+      <option name="closed" value="true" />
+      <created>1710253965835</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1710253965835</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -466,13 +522,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Making corrections based on code review comments(2)" />
-    <MESSAGE value="Making corrections based on code review comments(3)" />
-    <MESSAGE value="Creating a BrokenLinksImagesTest class" />
-    <MESSAGE value="moving method clickJavascriptExecutor to BaseTest class" />
-    <MESSAGE value="Creating an UploadDownloadTest class" />
-    <MESSAGE value="Add clickChooseFileAndUploadFileTest method" />
-    <MESSAGE value="Creating an AlertsTest class" />
     <MESSAGE value="Minor changes in an AlertsTest class" />
     <MESSAGE value="Minor changes in an AlertsTest class(2)" />
     <MESSAGE value="Create waitUntil tests" />
@@ -491,6 +540,13 @@
     <MESSAGE value="Stringbuilder, uploadCheck implementations" />
     <MESSAGE value="filling required fields in a separate method" />
     <MESSAGE value="add Lombok and dependency, add headless browser mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Lombok and dependency, add headless browser mode" />
+    <MESSAGE value="Implemented Allure, accept unexpected alert behaviour, extract acceptance into a separate method in Alert page tests" />
+    <MESSAGE value="Fix cssSelector value" />
+    <MESSAGE value="Added base method clickJavascriptExecutor" />
+    <MESSAGE value="Fix selectors" />
+    <MESSAGE value="Fix selectors and minor changes in invalidLinkTest" />
+    <MESSAGE value="implementation allure annotations in BrowserWindows test class" />
+    <MESSAGE value="implementation allure annotations in ModalDialogs test class" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation allure annotations in ModalDialogs test class" />
   </component>
 </project>

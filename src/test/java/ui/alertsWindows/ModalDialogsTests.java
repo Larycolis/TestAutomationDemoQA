@@ -55,6 +55,7 @@ public class ModalDialogsTests extends BaseTest {
         getWebDriverWait().until(ExpectedConditions.visibilityOfElementLocated(By.className(MODAL_WINDOW_CLASS_NAME)));
     }
 
+    //TODO: порефачить тестовые классы, много где используется: BrokenLinksImagesTest, все собрать в одном месте (где?)
     @Step("Checking that the text is equals")
     private void checkModalText(String Small_Modal, By selector) {
         Assertions.assertEquals(Small_Modal, getDriver().findElement(selector).getText());
