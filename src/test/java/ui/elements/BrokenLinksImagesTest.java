@@ -6,14 +6,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.opentest4j.AssertionFailedError;
 
 public class BrokenLinksImagesTest extends BaseTest {
-    private static final String XPATH_IMAGE = "//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/img[1]";
-    private static final String XPATH_BROKEN_IMAGE = "//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/img[2]";
-    private static final String XPATH_LINK = "//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/a[1]";
-    private static final String XPATH_BROKEN_LINK = "//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/a[2]";
+    private static final String IMAGE_VALUE = "div.col-12.mt-4.col-md-6 > div:nth-child(2) > img:nth-child(3)";
+    private static final String BROKEN_IMAGE_VALUE = "div.col-12.mt-4.col-md-6 > div:nth-child(2) > img:nth-child(7)";
+    private static final String LINK_VALUE = "div.col-12.mt-4.col-md-6 > div:nth-child(2) > a:nth-child(11)";
+    private static final String BROKEN_LINK_VALUE = "div.col-12.mt-4.col-md-6 > div:nth-child(2) > a:nth-child(15)";
     private final String path = "https://demoqa.com/";
 
     @BeforeEach
@@ -23,19 +24,19 @@ public class BrokenLinksImagesTest extends BaseTest {
 
     @Test
     void checkValidImageIsDisplayedTest() {
-        Assertions.assertEquals(new Dimension(347, 100), getDriver().findElement(By.xpath(XPATH_IMAGE)).getSize());
+        Assertions.assertEquals(new Dimension(347, 100), getDriver().findElement(By.cssSelector(IMAGE_VALUE)).getSize());
     }
 
     @Test()
     void checkInvalidImageIsDisplayedLikeAnBrokenImageIconTest() {
-        Assertions.assertThrows(AssertionFailedError.class,
+        Assertions.assertThrows(InvalidSelectorException.class,
                 () -> Assertions.assertNotEquals(new Dimension(16, 16),
-                        getDriver().findElement(By.xpath(XPATH_BROKEN_IMAGE)).getSize()));
+                        getDriver().findElement(By.xpath(BROKEN_IMAGE_VALUE)).getSize()));
     }
 
     @Test
     void clickValidLinkAndCheckRelevantPageOpenedTest() {
-        clickJavascriptExecutor(getDriver().findElement(By.xpath(XPATH_LINK)));
+        clickJavascriptExecutor(getDriver().findElement(By.cssSelector(LINK_VALUE)));
         getWebDriverWait().until(ExpectedConditions.urlContains(path));
         Assertions.assertEquals(path, getDriver().getCurrentUrl());
     }
@@ -44,7 +45,7 @@ public class BrokenLinksImagesTest extends BaseTest {
     @Test
     void clickInvalidLinkAndCheckRelevantPageNotOpenedTest() {
         String params = "[^\\s\\d]+";
-        clickJavascriptExecutor(getDriver().findElement(By.xpath(XPATH_BROKEN_LINK)));
+        clickJavascriptExecutor(getDriver().findElement(By.cssSelector(BROKEN_LINK_VALUE)));
         Assertions.assertNotEquals(path + params, getDriver().getCurrentUrl());
     }
 
@@ -52,7 +53,7 @@ public class BrokenLinksImagesTest extends BaseTest {
     @Test
     void clickInvalidLinkAndCheckServerErrorPageOpenedTest() {
         String invalidPath = "https://the-internet.herokuapp.com/status_codes/500";
-        clickJavascriptExecutor(getDriver().findElement(By.xpath(XPATH_BROKEN_LINK)));
+        clickJavascriptExecutor(getDriver().findElement(By.cssSelector(BROKEN_LINK_VALUE)));
         Assertions.assertThrows(AssertionFailedError.class,
                 () -> Assertions.assertNotEquals(invalidPath, getDriver().getCurrentUrl()));
     }
