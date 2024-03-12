@@ -35,8 +35,8 @@ public class ModalDialogsTests extends BaseTest {
     @DisplayName("Click the button to see the small modal")
     void clickSmallModalButtonAndCheckOpenNewSmallModalTest() {
         clickAndWaitModalWindow("showSmallModal");
-        checkModalText("Small Modal", By.id("example-modal-sizes-title-sm"));
-        checkModalText("This is a small modal. It has very less content", By.className("modal-body"));
+        checkEqualsExpAndActText("Small Modal", By.id("example-modal-sizes-title-sm"));
+        checkEqualsExpAndActText("This is a small modal. It has very less content", By.className("modal-body"));
         closeModalAndCheckModalWindowIsInvisibility("closeSmallModal");
     }
 
@@ -44,8 +44,8 @@ public class ModalDialogsTests extends BaseTest {
     @DisplayName("Click the button to see the large modal")
     void clickLargeModalButtonAndCheckOpenNewLargeModalTest() {
         clickAndWaitModalWindow("showLargeModal");
-        checkModalText("Large Modal", By.id("example-modal-sizes-title-lg"));
-        checkModalText(largeModalBodyText, By.className("modal-body"));
+        checkEqualsExpAndActText("Large Modal", By.id("example-modal-sizes-title-lg"));
+        checkEqualsExpAndActText(largeModalBodyText, By.className("modal-body"));
         closeModalAndCheckModalWindowIsInvisibility("closeLargeModal");
     }
 
@@ -55,10 +55,10 @@ public class ModalDialogsTests extends BaseTest {
         getWebDriverWait().until(ExpectedConditions.visibilityOfElementLocated(By.className(MODAL_WINDOW_CLASS_NAME)));
     }
 
-    //TODO: порефачить тестовые классы, много где используется: BrokenLinksImagesTest, все собрать в одном месте (где?)
+    //TODO: порефачить тестовые классы, много где используется: BrokenLinksImagesTest, ButtonsTests, все собрать в одном месте (где?)
     @Step("Checking that the text is equals")
-    private void checkModalText(String Small_Modal, By selector) {
-        Assertions.assertEquals(Small_Modal, getDriver().findElement(selector).getText());
+    private void checkEqualsExpAndActText(String expText, By selector) {
+        Assertions.assertEquals(expText, getDriver().findElement(selector).getText());
     }
 
     @Step("Close the modal and check it is invisible")

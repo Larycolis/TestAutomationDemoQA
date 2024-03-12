@@ -57,7 +57,7 @@ public class BrokenLinksImagesTest extends BaseTest {
     void clickInvalidLinkAndCheckRelevantPageNotOpenedTest() {
         clickJavascriptExecutor(getDriver().findElement(By.cssSelector(BROKEN_LINK_VALUE)));
         WaitUntilURLContainsThePath(invalidPath);
-        checkModalText("""
+        checkEqualsExpAndActText("""
                         This page returned a 500 status code.
 
                         For a definition and common list of HTTP status codes, go here""",
@@ -96,7 +96,7 @@ public class BrokenLinksImagesTest extends BaseTest {
     }
 
     @Step("Checking that the text is equals")
-    private void checkModalText(String expText, By selector) {
+    private void checkEqualsExpAndActText(String expText, By selector) {
         Assertions.assertEquals(expText, getDriver().findElement(selector).getText());
     }
 }
