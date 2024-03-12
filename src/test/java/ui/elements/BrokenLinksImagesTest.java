@@ -15,7 +15,7 @@ public class BrokenLinksImagesTest extends BaseTest {
     private static final String BROKEN_IMAGE_VALUE = "div.col-12.mt-4.col-md-6 > div:nth-child(2) > img:nth-child(7)";
     private static final String LINK_VALUE = "div.col-12.mt-4.col-md-6 > div:nth-child(2) > a:nth-child(11)";
     private static final String BROKEN_LINK_VALUE = "div.col-12.mt-4.col-md-6 > div:nth-child(2) > a:nth-child(15)";
-    private final String path = "https://demoqa.com/";
+
 
     @BeforeEach
     void setUp() {
@@ -37,6 +37,7 @@ public class BrokenLinksImagesTest extends BaseTest {
     @Test
     void clickValidLinkAndCheckRelevantPageOpenedTest() {
         clickJavascriptExecutor(getDriver().findElement(By.cssSelector(LINK_VALUE)));
+        String path = "https://demoqa.com/";
         getWebDriverWait().until(ExpectedConditions.urlContains(path));
         Assertions.assertEquals(path, getDriver().getCurrentUrl());
     }
@@ -44,9 +45,14 @@ public class BrokenLinksImagesTest extends BaseTest {
     //TODO: needs to be changed using a proxy
     @Test
     void clickInvalidLinkAndCheckRelevantPageNotOpenedTest() {
-        String params = "[^\\s\\d]+";
         clickJavascriptExecutor(getDriver().findElement(By.cssSelector(BROKEN_LINK_VALUE)));
-        Assertions.assertNotEquals(path + params, getDriver().getCurrentUrl());
+        String herokuapp_path = "https://the-internet.herokuapp.com/status_codes/500";
+        getWebDriverWait().until(ExpectedConditions.urlContains(herokuapp_path));
+        Assertions.assertEquals("""
+                        This page returned a 500 status code.
+
+                        For a definition and common list of HTTP status codes, go here""",
+                getDriver().findElement(By.cssSelector("#content > div > p")).getText());
     }
 
     //TODO: needs to be changed using a proxy
