@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation allure annotations in BrokenLinksImages test class">
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation allure annotations in Buttons test class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/ModalDialogsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/ModalDialogsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/BrokenLinksImagesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/BrokenLinksImagesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/ButtonsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/ButtonsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/CheckboxTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/CheckboxTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +87,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.TestAutomationDemoQA [clean]">
+  <component name="RunManager" selected="Gradle.ButtonsTests">
     <configuration name="ButtonsTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -219,8 +217,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestAutomationDemoQA [clean]" />
         <item itemvalue="Gradle.ButtonsTests" />
+        <item itemvalue="Gradle.TestAutomationDemoQA [clean]" />
         <item itemvalue="Gradle.ButtonsTests.clickButtonDoubleClickMeAndCheckSelectedTest" />
         <item itemvalue="Gradle.TestAutomationDemoQA [allureServe]" />
         <item itemvalue="Gradle.TestAutomationDemoQA [allureReport]" />
@@ -516,7 +514,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710261098254</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="implementation allure annotations in Buttons test class">
+      <option name="closed" value="true" />
+      <created>1710264501610</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1710264501610</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -531,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Minor changes in an AlertsTest class(2)" />
     <MESSAGE value="Create waitUntil tests" />
     <MESSAGE value="Create SwitchToNewWindowAndCheck tests" />
     <MESSAGE value="Create OpenAndCloseModalWindow tests" />
@@ -556,6 +561,7 @@
     <MESSAGE value="implementation allure annotations in BrowserWindows test class" />
     <MESSAGE value="implementation allure annotations in ModalDialogs test class" />
     <MESSAGE value="implementation allure annotations in BrokenLinksImages test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation allure annotations in BrokenLinksImages test class" />
+    <MESSAGE value="implementation allure annotations in Buttons test class" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation allure annotations in Buttons test class" />
   </component>
 </project>
