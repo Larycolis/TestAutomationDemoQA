@@ -30,7 +30,7 @@ public class ButtonsTests extends BaseTest {
 
     @Test
     void clickButtonClickMeAndCheckSelectedTest() {
-        getDriver().findElement(By.cssSelector("div.col-md-6 > div:nth-child(2) > div:nth-child(3) button")).click();
+        clickJavascriptExecutor(getDriver().findElement(By.cssSelector("div.col-md-6 > div:nth-child(2) >  div:nth-child(4) button")));
         Assertions.assertEquals("You have done a dynamic click", getDriver().findElement(By.id("dynamicClickMessage")).getText());
     }
 }
