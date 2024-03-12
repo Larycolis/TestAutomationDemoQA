@@ -30,7 +30,7 @@ public class AlertTests extends BaseTest {
     }
 
     @Test
-    @DisplayName("Click button to see alert")
+    @DisplayName("Click the button to see the alert")
     void clickAlertButtonCheckAndCloseAlertOkTest() {
         Alert alert = clickAlertButtonAndSwitchToAlert(ALERT_BUTTON);
         assertAlertTextAndAccept("You clicked a button", alert);
@@ -77,19 +77,19 @@ public class AlertTests extends BaseTest {
         checkConfirmationName(name);
     }
 
-    @Step("Click and switch to alert")
+    @Step("Click and switch to the alert")
     private Alert clickAlertButtonAndSwitchToAlert(String alertButton) {
         clickJavascriptExecutor(getDriver().findElement(By.id(alertButton)));
         return getDriver().switchTo().alert();
     }
 
-    @Step("Assert text in alert and accept")
+    @Step("Assert text in the alert and accept")
     private void assertAlertTextAndAccept(String expected, Alert alert) {
         Assertions.assertEquals(expected, alert.getText());
         alert.accept();
     }
 
-    @Step("Click the delay button, wait 5 minutes and switch to alert")
+    @Step("Click the delay the button, wait 5 minutes and switch to the alert")
     private Alert clickAlertButtonWaitAndSwitchToAlert() {
         getDriver().findElement(By.id(TIMER_ALERT_BUTTON)).click();
         getWebDriverWait().until(ExpectedConditions.alertIsPresent());
@@ -101,12 +101,12 @@ public class AlertTests extends BaseTest {
         Assertions.assertEquals(CURRENT_URL, getDriver().getCurrentUrl());
     }
 
-    @Step("Checking confirmation of OK button selection")
+    @Step("Checking confirmation of the OK button selection")
     private void checkConfermationOk() {
         Assertions.assertEquals("You selected Ok", getDriver().findElement(By.id("confirmResult")).getText());
     }
 
-    @Step("Checking confirmation of Cancel button selection")
+    @Step("Checking confirmation of the Cancel button selection")
     private void checkConfirmationCancel() {
         Assertions.assertEquals("You selected Cancel", getDriver().findElement(By.id("confirmResult")).getText());
     }
@@ -121,7 +121,7 @@ public class AlertTests extends BaseTest {
         Assertions.assertEquals("You entered " + name, getDriver().findElement(By.id("promptResult")).getText());
     }
 
-    @Step("Enter name and confirm")
+    @Step("Enter the name and confirm")
     private void enterValueAndConfirm(String name, Alert alert) {
         alert.sendKeys(name);
         alert.accept();
