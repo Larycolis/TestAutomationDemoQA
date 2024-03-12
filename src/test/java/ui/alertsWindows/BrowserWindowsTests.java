@@ -82,7 +82,7 @@ public class BrowserWindowsTests extends BaseTest {
         getDriver().switchTo().window(originWindow);
     }
 
-    @Step("checking that the values are not equal")
+    @Step("Checking that the values are not equal")
     private void checkTheValuesAreNotEqual() {
         Assertions.assertNotEquals(originWindow, getDriver().getWindowHandle());
     }
