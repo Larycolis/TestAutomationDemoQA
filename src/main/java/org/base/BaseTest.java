@@ -13,7 +13,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.HashMap;
 
 public class BaseTest {
@@ -32,14 +31,14 @@ public class BaseTest {
     public static void beforeAll() {
         ChromeOptions options = new ChromeOptions();
         options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT);
-        options.addArguments("--headless=new");
+        //options.addArguments("--headless=new");
         HashMap<String, Object> chromePref = new HashMap<>();
         chromePref.put("download.default_directory", "D:\\Downloads");
         options.setExperimentalOption("prefs", chromePref);
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        //webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     @AfterAll
