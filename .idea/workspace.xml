@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation of page object pattern for test classes on Selenium">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/page/alertsWindows/BrowserWindowsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/page/alertsWindows/BrowserWindowsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/BrowserWindowsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/BrowserWindowsTests.java" afterDir="false" />
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation of page object pattern for test classes on Selenium iteration 2">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/page/alertsWindows/ModalDialogsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/page/alertsWindows/ModalDialogsPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -551,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710435208042</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="implementation of page object pattern for test classes on Selenium iteration 2">
+      <option name="closed" value="true" />
+      <created>1710448501666</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1710448501666</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -566,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create Fill required form fields Selenide tests" />
     <MESSAGE value="Minor changes in Fill required form fields Selenide tests" />
     <MESSAGE value="Create Fill all form fields Selenide tests without file upload" />
     <MESSAGE value="Minor changes in Fill all form fields Selenide tests without file upload" />
@@ -591,6 +596,7 @@
     <MESSAGE value="implementation allure annotations in Checkbox test class" />
     <MESSAGE value="implementation allure annotations in DynamicProperties test class" />
     <MESSAGE value="implementation of page object pattern for test classes on Selenium" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation of page object pattern for test classes on Selenium" />
+    <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation of page object pattern for test classes on Selenium iteration 2" />
   </component>
 </project>

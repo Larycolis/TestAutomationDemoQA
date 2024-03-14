@@ -16,13 +16,10 @@ import java.time.Duration;
 public class BrowserWindowsPage {
     private final WebDriver driver;
     private final WebDriverWait webDriverWait;
-
     @FindBy(id = "tabButton")
     private WebElement tabButton;
-
     @FindBy(id = "windowButton")
     private WebElement windowButton;
-
     @FindBy(id = "messageWindowButton")
     private WebElement messageWindowButton;
 

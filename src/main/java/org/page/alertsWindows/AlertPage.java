@@ -15,16 +15,12 @@ public class AlertPage {
     private final WebDriverWait webDriverWait;
     @FindBy(id = "confirmButton")
     private WebElement confirmButton;
-
     @FindBy(id = "timerAlertButton")
     private WebElement timerAlertButton;
-
     @FindBy(id = "promtButton")
     private WebElement promtButton;
-
     @FindBy(id = "alertButton")
     private WebElement alertButton;
-
     @FindBy(id = "confirmResult")
     private WebElement confirmResult;
 
