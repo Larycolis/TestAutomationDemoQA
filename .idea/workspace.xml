@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation allure annotations in Buttons test class">
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation allure annotations in Checkbox test class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/CheckboxTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/CheckboxTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/ModalDialogsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/alertsWindows/ModalDialogsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/DynamicPropertiesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/DynamicPropertiesTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +88,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.ButtonsTests">
+  <component name="RunManager" selected="Gradle.TestAutomationDemoQA [allureServe]">
     <configuration name="ButtonsTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -112,7 +113,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ButtonsTests.clickButtonDoubleClickMeAndCheckSelectedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DynamicPropertiesTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -125,7 +126,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.ButtonsTests.clickButtonDoubleClickMeAndCheckSelectedTest&quot;" />
+            <option value="&quot;ui.elements.DynamicPropertiesTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -217,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ButtonsTests" />
-        <item itemvalue="Gradle.TestAutomationDemoQA [clean]" />
-        <item itemvalue="Gradle.ButtonsTests.clickButtonDoubleClickMeAndCheckSelectedTest" />
         <item itemvalue="Gradle.TestAutomationDemoQA [allureServe]" />
         <item itemvalue="Gradle.TestAutomationDemoQA [allureReport]" />
+        <item itemvalue="Gradle.DynamicPropertiesTests" />
+        <item itemvalue="Gradle.TestAutomationDemoQA [clean]" />
+        <item itemvalue="Gradle.ButtonsTests" />
       </list>
     </recent_temporary>
   </component>
@@ -522,7 +523,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710264501610</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="implementation allure annotations in Checkbox test class">
+      <option name="closed" value="true" />
+      <created>1710282654950</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1710282654950</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -537,7 +546,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create waitUntil tests" />
     <MESSAGE value="Create SwitchToNewWindowAndCheck tests" />
     <MESSAGE value="Create OpenAndCloseModalWindow tests" />
     <MESSAGE value="Create Fill required form fields Selenide tests" />
@@ -562,6 +570,7 @@
     <MESSAGE value="implementation allure annotations in ModalDialogs test class" />
     <MESSAGE value="implementation allure annotations in BrokenLinksImages test class" />
     <MESSAGE value="implementation allure annotations in Buttons test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation allure annotations in Buttons test class" />
+    <MESSAGE value="implementation allure annotations in Checkbox test class" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation allure annotations in Checkbox test class" />
   </component>
 </project>
