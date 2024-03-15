@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.openqa.selenium.By;
 import org.page.mainPage.MainPage;
 
 public class MainPageTests extends BaseTest {
@@ -20,8 +19,7 @@ public class MainPageTests extends BaseTest {
 
     @Test
     void clickBannerImageAndCheckSeleniumTrainingPageOpenedTest() {
-        mainPage.clickJavascriptExecutor2(getDriver().findElement(By.className("banner-image")));
-        mainPage.openNewWindow();
+        mainPage.clickBannerAndSwitchToNewWindow();
         mainPage.waitTitleIs();
     }
 

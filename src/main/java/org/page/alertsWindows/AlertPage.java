@@ -30,12 +30,6 @@ public class AlertPage {
         PageFactory.initElements(driver, this);
     }
 
-    @Step("Performing a click using JavascriptExecutor")
-    public void clickJavascriptExecutor3(WebElement webElement) {
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", webElement);
-    }
-
     @Step("Click and switch to the alert")
     public void clickAlertButtonAndDismiss() {
         clickJavascriptExecutor3(confirmButton);
@@ -87,6 +81,11 @@ public class AlertPage {
     @Step("check the confirmation of the entered name")
     public void checkConfirmationName(String name) {
         Assertions.assertEquals("You entered " + name, driver.findElement(By.id("promptResult")).getText());
+    }
+
+    private void clickJavascriptExecutor3(WebElement webElement) {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", webElement);
     }
 
     private Alert getAlert(WebElement element) {

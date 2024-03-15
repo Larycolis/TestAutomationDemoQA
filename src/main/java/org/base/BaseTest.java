@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
@@ -31,7 +30,7 @@ public class BaseTest {
     public static void beforeAll() {
         ChromeOptions options = new ChromeOptions();
         options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT);
-        //options.addArguments("--headless=new");
+        options.addArguments("--headless=new");
         HashMap<String, Object> chromePref = new HashMap<>();
         chromePref.put("download.default_directory", "D:\\Downloads");
         options.setExperimentalOption("prefs", chromePref);
@@ -52,11 +51,5 @@ public class BaseTest {
     public void clickJavascriptExecutor(WebElement webElement) {
         JavascriptExecutor executor = (JavascriptExecutor) getDriver();
         executor.executeScript("arguments[0].click();", webElement);
-    }
-
-    //TODO: порефачить тестовые классы, много где используется, все сослать на этот метод
-    @Step("Wait until the URL contains the path")
-    public Boolean WaitUntilURLContainsThePath(String path) {
-        return getWebDriverWait().until(ExpectedConditions.urlContains(path));
     }
 }

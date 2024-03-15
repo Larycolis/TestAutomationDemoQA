@@ -29,12 +29,6 @@ public class BrowserWindowsPage {
         PageFactory.initElements(driver, this);
     }
 
-    @Step("Performing a click using JavascriptExecutor")
-    public void clickJavascriptExecutor4(WebElement webElement) {
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", webElement);
-    }
-
     @Step("Click the button, wait, switch and return new window")
     public String clickToTabButtonAndSwitchToNewWindow() {
         String originWindow = driver.getWindowHandle();
@@ -77,6 +71,11 @@ public class BrowserWindowsPage {
     @Step("Checking that the values are not equal")
     public void checkTheValuesAreNotEqual(String originWindow) {
         Assertions.assertNotEquals(originWindow, driver.getWindowHandle());
+    }
+
+    private void clickJavascriptExecutor4(WebElement webElement) {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", webElement);
     }
 
     private void switchToNewWindow(String originWindow) {

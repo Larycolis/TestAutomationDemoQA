@@ -16,9 +16,10 @@ import java.util.List;
 public class MainPage {
     private final WebDriver driver;
     private final WebDriverWait webDriverWait;
-
     @FindBy(css = ".category-cards>div")
     private List<WebElement> cardList;
+    @FindBy(className = "banner-image")
+    private WebElement bannerImage;
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -26,14 +27,9 @@ public class MainPage {
         PageFactory.initElements(driver, this);
     }
 
-    @Step("Performing a click using JavascriptExecutor")
-    public void clickJavascriptExecutor2(WebElement webElement) {
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", webElement);
-    }
-
-    @Step("Open new window")
-    public void openNewWindow() {
+    @Step("Click the banner and switch to new window")
+    public void clickBannerAndSwitchToNewWindow() {
+        clickJavascriptExecutor2(bannerImage);
         driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
     }
 
@@ -55,5 +51,10 @@ public class MainPage {
     @Step("Assert equality of expected and actual URL")
     public void assertActualUrl(String path) {
         Assertions.assertEquals(path, driver.getCurrentUrl());
+    }
+
+    public void clickJavascriptExecutor2(WebElement webElement) {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", webElement);
     }
 }
