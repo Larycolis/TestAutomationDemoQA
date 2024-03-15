@@ -30,7 +30,7 @@ public class BaseTest {
     public static void beforeAll() {
         ChromeOptions options = new ChromeOptions();
         options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT);
-        options.addArguments("--headless=new");
+        //options.addArguments("--headless=new");
         HashMap<String, Object> chromePref = new HashMap<>();
         chromePref.put("download.default_directory", "D:\\Downloads");
         options.setExperimentalOption("prefs", chromePref);
