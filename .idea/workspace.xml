@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation of page object pattern for test classes on Selenium iteration 2">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/page/alertsWindows/ModalDialogsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/page/alertsWindows/ModalDialogsPage.java" afterDir="false" />
-    </list>
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation of page object pattern for test classes on Selenium iteration 4" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,8 +84,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.BrowserWindowsTests">
-    <configuration name="AlertTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.TestAutomationDemoQA [clean]">
+    <configuration name="BrokenLinksImagesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -100,7 +98,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.AlertTests&quot;" />
+            <option value="&quot;ui.elements.BrokenLinksImagesTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -111,7 +109,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AlertTests.clickAlertButtonCheckAndCloseAlertOkTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BrokenLinksImagesTest.checkValidImageIsDisplayedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -124,7 +122,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.AlertTests.clickAlertButtonCheckAndCloseAlertOkTest&quot;" />
+            <option value="&quot;ui.elements.BrokenLinksImagesTest.checkValidImageIsDisplayedTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -135,7 +133,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AlertTests.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MainPageTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -148,7 +146,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.AlertTests.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest&quot;" />
+            <option value="&quot;ui.mainPage.MainPageTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -159,7 +157,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="BrowserWindowsTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MainPageTests.clickBannerImageAndCheckSeleniumTrainingPageOpenedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -172,7 +170,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.alertsWindows.BrowserWindowsTests&quot;" />
+            <option value="&quot;ui.mainPage.MainPageTests.clickBannerImageAndCheckSeleniumTrainingPageOpenedTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -220,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.BrowserWindowsTests" />
-        <item itemvalue="Gradle.AlertTests" />
         <item itemvalue="Gradle.TestAutomationDemoQA [clean]" />
-        <item itemvalue="Gradle.AlertTests.clickWaitAlertButtonWaitCheckAndCloseAlertOkTest" />
-        <item itemvalue="Gradle.AlertTests.clickAlertButtonCheckAndCloseAlertOkTest" />
+        <item itemvalue="Gradle.MainPageTests.clickBannerImageAndCheckSeleniumTrainingPageOpenedTest" />
+        <item itemvalue="Gradle.MainPageTests" />
+        <item itemvalue="Gradle.BrokenLinksImagesTest" />
+        <item itemvalue="Gradle.BrokenLinksImagesTest.checkValidImageIsDisplayedTest" />
       </list>
     </recent_temporary>
   </component>
@@ -557,7 +555,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710448501666</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="implementation of page object pattern for test classes on Selenium iteration 3">
+      <option name="closed" value="true" />
+      <created>1710455638106</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1710455638106</updated>
+    </task>
+    <task id="LOCAL-00042" summary="implementation of page object pattern for test classes on Selenium iteration 4">
+      <option name="closed" value="true" />
+      <created>1710462574697</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1710462574697</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,8 +586,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Minor changes in Fill required form fields Selenide tests" />
-    <MESSAGE value="Create Fill all form fields Selenide tests without file upload" />
     <MESSAGE value="Minor changes in Fill all form fields Selenide tests without file upload" />
     <MESSAGE value="Сhanges: consolidation method, create Fill all form fields Selenide tests with file upload" />
     <MESSAGE value="minor changes: file upload method optimization" />
@@ -597,6 +609,8 @@
     <MESSAGE value="implementation allure annotations in DynamicProperties test class" />
     <MESSAGE value="implementation of page object pattern for test classes on Selenium" />
     <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation of page object pattern for test classes on Selenium iteration 2" />
+    <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 3" />
+    <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation of page object pattern for test classes on Selenium iteration 4" />
   </component>
 </project>
