@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation of page object pattern for test classes on Selenium iteration 6">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/page/elements/DynamicPropertiesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/page/elements/DynamicPropertiesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/DynamicPropertiesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/DynamicPropertiesTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation of page object pattern for test classes on Selenium iteration 7" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -591,7 +587,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710499260070</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="implementation of page object pattern for test classes on Selenium iteration 7">
+      <option name="closed" value="true" />
+      <created>1710544615670</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1710544615670</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -606,7 +610,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="minor changes: file upload method optimization" />
     <MESSAGE value="Implementation Builder Design Pattern" />
     <MESSAGE value="moving getters to test methods" />
     <MESSAGE value="comparing expected and actual object" />
@@ -631,6 +634,7 @@
     <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 4" />
     <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 5" />
     <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation of page object pattern for test classes on Selenium iteration 6" />
+    <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation of page object pattern for test classes on Selenium iteration 7" />
   </component>
 </project>

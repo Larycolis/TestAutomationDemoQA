@@ -3,24 +3,27 @@ package ui.elements;
 import org.base.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.page.elements.LinksPage;
 
 public class LinksTests extends BaseTest {
+    private LinksPage linksPage;
+
     @BeforeEach
     void setUp() {
+        linksPage = new LinksPage(getDriver());
         getDriver().get("https://demoqa.com/links");
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"simpleLink", "dynamicLink"})
+    @DisplayName(" ")
     void clickLinksAndCheckRelevantPageOpenedTest(String locator) {
-        getDriver().findElement(By.id(locator)).click();
-        getDriver().switchTo().window(getDriver().getWindowHandles().toArray()[1].toString());
-        getWebDriverWait().until(ExpectedConditions.urlContains("https://demoqa.com/"));
+        linksPage.clickSwitchToNewWindowAndCheckUrl(locator);
     }
 
     //TODO: needs to be changed using a proxy
@@ -29,11 +32,9 @@ public class LinksTests extends BaseTest {
             "301, Moved Permanently, moved", "400, Bad Request, bad-request",
             "401, Unauthorized, unauthorized", "403, Forbidden, forbidden",
             "404, Not Found, invalid-url"})
+    @DisplayName("Checking the api response for link click")
     void clickLinksAndCheckSelectedTest(int status, String text, String id) {
-        String expectedLinkResponse = "Link has responded with staus " + status + " and status text " + text;
-        String linkResponse = "linkResponse";
-        clickJavascriptExecutor(getDriver().findElement(By.id(id)));
-        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.id(linkResponse)));
-        Assertions.assertEquals(expectedLinkResponse, getDriver().findElement(By.id(linkResponse)).getText());
+        LinksPage.Result result = linksPage.clickTheLinkAndGetValidText(status, text, id);
+        Assertions.assertEquals(result.expectedLinkResponse(), getDriver().findElement(By.id(result.linkResponse())).getText());
     }
 }
