@@ -1,37 +1,35 @@
 package ui.elements;
 
 import org.base.BaseTest;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
+import org.page.elements.RadioButtonPage;
 
 public class RadioButtonTests extends BaseTest {
-    private static final String TEXT_SUCCESS = "text-success";
+    private RadioButtonPage radioButtonPage;
 
     @BeforeEach
     void setUp() {
+        radioButtonPage = new RadioButtonPage(getDriver());
         getDriver().get("https://demoqa.com/radio-button");
     }
 
     @Test
+    @DisplayName("Click the button Yes and check the text")
     void clickButtonYesAndCheckSelectedTest() {
-        getJavascriptExecutor("yesRadio");
-        Assertions.assertEquals("Yes", getDriver().findElement(By.className(TEXT_SUCCESS)).getText());
+        radioButtonPage.assertTextAfterClickButtonYes();
     }
 
     @Test
+    @DisplayName("Click the button Impressive and check the text")
     void clickButtonImpressiveAndCheckSelectedTest() {
-        getJavascriptExecutor("impressiveRadio");
-        Assertions.assertEquals("Impressive", getDriver().findElement(By.className(TEXT_SUCCESS)).getText());
+        radioButtonPage.assertTextAfterClickButtonImpressive();
     }
 
     @Test
-    void clickButtonNoAndCheckUnavailabilityTest() {
-        Assertions.assertFalse(getDriver().findElement(By.id("noRadio")).isEnabled());
-    }
-
-    private void getJavascriptExecutor(String id) {
-        clickJavascriptExecutor(getDriver().findElement(By.id(id)));
+    @DisplayName("Check button No is unavailable")
+    void checkButtonNoIsUnavailableTest() {
+        radioButtonPage.assertButtonIsUnavailable();
     }
 }
