@@ -21,7 +21,7 @@ public class LinksTests extends BaseTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"simpleLink", "dynamicLink"})
-    @DisplayName(" ")
+    @DisplayName("Click links and check relevant page opened")
     void clickLinksAndCheckRelevantPageOpenedTest(String locator) {
         linksPage.clickSwitchToNewWindowAndCheckUrl(locator);
     }
