@@ -44,5 +44,5 @@ public class RadioButtonPage {
     private void clickJavascriptExecutor9(WebElement webElement) {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", webElement);
-    }
+    } //TODO: перенести в BasePage
 }

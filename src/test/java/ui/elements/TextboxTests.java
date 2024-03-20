@@ -2,6 +2,7 @@ package ui.elements;
 
 import org.base.BaseTest;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -18,6 +19,7 @@ public class TextboxTests extends BaseTest {
 
     @ParameterizedTest
     @ValueSource(strings = {" test", "123test", "123", "i", "TEST", "$*^"})
+    @DisplayName("Filling out the name field and submit")
     void fillTheFullNameFieldAndSubmitTest(String fullName) {
         textboxPage.sendUserName(fullName);
         textboxPage.clickSubmit();
@@ -26,6 +28,7 @@ public class TextboxTests extends BaseTest {
 
     @ParameterizedTest
     @CsvSource({"Ivan Ivanovich, test@test.ts, Gorkog 1, Lenin 12"})
+    @DisplayName("Filling out all the fields on the screen and submit")
     void fillTheFormAndSubmitTest(String fullName, String email, String currentAddress, String permanentAddress) {
         textboxPage.sendUserName(fullName);
         textboxPage.sendEmail(email);

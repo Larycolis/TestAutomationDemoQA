@@ -86,7 +86,7 @@ public class AlertPage {
     private void clickJavascriptExecutor3(WebElement webElement) {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", webElement);
-    }
+    } //TODO: перенести в BasePage
 
     private Alert getAlert(WebElement element) {
         clickJavascriptExecutor3(element);

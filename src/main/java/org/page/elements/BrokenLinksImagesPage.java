@@ -40,7 +40,6 @@ public class BrokenLinksImagesPage {
         Assertions.assertEquals(path, driver.getCurrentUrl());
     }
 
-
     @Step("Checking that the text is equals")
     public void clickBrokenLinkWaitAndCheckBrokenLinkPageBody() {
         clickJavascriptExecutor5(brokenLink);
@@ -74,10 +73,10 @@ public class BrokenLinksImagesPage {
 
     private void waitUntilURLContainsThePath(String path) {
         webDriverWait.until(ExpectedConditions.urlContains(path));
-    }
+    } //TODO: перенести в BasePage
 
     private void clickJavascriptExecutor5(WebElement webElement) {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", webElement);
-    }
+    } //TODO: перенести в BasePage
 }

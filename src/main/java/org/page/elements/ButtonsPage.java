@@ -60,5 +60,5 @@ public class ButtonsPage {
     private void clickJavascriptExecutor6(WebElement webElement) {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", webElement);
-    }
+    } //TODO: перенести в BasePage
 }

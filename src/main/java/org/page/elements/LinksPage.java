@@ -36,15 +36,16 @@ public class LinksPage {
         return new Result(expectedLinkResponse, linkResponse);
     }
 
-    public record Result(String expectedLinkResponse, String linkResponse) {
-    }
-
+    @Step("Assert text on screen")
     public void assertTextOnScreen(LinksPage.Result result) {
         Assertions.assertEquals(result.expectedLinkResponse(), driver.findElement(By.id(result.linkResponse())).getText());
+    }
+
+    public record Result(String expectedLinkResponse, String linkResponse) {
     }
 
     private void clickJavascriptExecutor8(WebElement webElement) {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", webElement);
-    }
+    } //TODO: перенести в BasePage
 }

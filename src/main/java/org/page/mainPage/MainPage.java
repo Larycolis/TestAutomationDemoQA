@@ -56,5 +56,5 @@ public class MainPage {
     public void clickJavascriptExecutor2(WebElement webElement) {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", webElement);
-    }
+    } //TODO: перенести в BasePage
 }
