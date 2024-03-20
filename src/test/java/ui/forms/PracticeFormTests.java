@@ -72,7 +72,7 @@ public class PracticeFormTests {
 
     @Test
     void fillAllFieldsWithUploadAndCheckExpectedMatchesActualTest() {
-        String fullPath = generateTempFile(".jpg");
+        String fullPath = generateTempFile(".jpg").toString();
         String pictureName = getFileName(fullPath);
         Student testStudent = getStudentWithAllFieldsWithUpload(subject, pictureName, state, city);
         page(FormPage.class)
@@ -122,7 +122,7 @@ public class PracticeFormTests {
     @CsvSource({"English, .jpg, NCR, Delhi", "Biology, .pdf, Uttar Pradesh, Agra",
             "History, .tif, Rajasthan, Jaiselmer", "Physics, .bmp, Haryana, Panipat"})
     void fillAllFieldsVariantsWithUploadAndCheckExpectedMatchesActualTest(String subject, String ext, String state, String city) {
-        String fullPath = generateTempFile(ext);
+        String fullPath = generateTempFile(ext).toString();
         String pictureName = getFileName(fullPath);
         Student testStudent = getStudentWithAllFieldsWithUpload(subject, pictureName, state, city);
         page(FormPage.class)

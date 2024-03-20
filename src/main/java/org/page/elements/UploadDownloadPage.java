@@ -1,7 +1,6 @@
 package org.page.elements;
 
 import io.qameta.allure.Step;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,10 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import static org.util.FakerUtil.generateTempFile;
 
 public class UploadDownloadPage {
     private final WebDriver driver;
@@ -61,13 +61,6 @@ public class UploadDownloadPage {
         Assertions.assertEquals("C:\\fakepath\\" + tempFile.getFileName(), uploadedFilePath.getText());
     }
 
-    private Path generateTempFile(String ext) {
-        try {
-            return Files.createTempFile(RandomStringUtils.randomAlphanumeric(5), ext);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     private void clickJavascriptExecutor11(WebElement webElement) {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
