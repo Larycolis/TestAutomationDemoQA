@@ -1,13 +1,11 @@
 package ui.elements;
 
 import org.base.BaseTest;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.By;
 import org.page.elements.LinksPage;
 
 public class LinksTests extends BaseTest {
@@ -35,6 +33,6 @@ public class LinksTests extends BaseTest {
     @DisplayName("Checking the api response for link click")
     void clickLinksAndCheckSelectedTest(int status, String text, String id) {
         LinksPage.Result result = linksPage.clickTheLinkAndGetValidText(status, text, id);
-        Assertions.assertEquals(result.expectedLinkResponse(), getDriver().findElement(By.id(result.linkResponse())).getText());
+        linksPage.assertTextOnScreen(result);
     }
 }

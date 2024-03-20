@@ -1,30 +1,26 @@
 package org.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
 
 public class BaseTest {
     private static WebDriver driver;
-    private static WebDriverWait webDriverWait;
+    //private static WebDriverWait webDriverWait;
 
     public WebDriver getDriver() {
         return driver;
     }
 
-    public WebDriverWait getWebDriverWait() {
-        return webDriverWait;
-    }
+//    public WebDriverWait getWebDriverWait() {
+//        return webDriverWait;
+//    }
 
     @BeforeAll
     public static void beforeAll() {
@@ -46,10 +42,9 @@ public class BaseTest {
             driver.quit();
         }
     }
-
-    @Step("Performing a click using JavascriptExecutor")
-    public void clickJavascriptExecutor(WebElement webElement) {
-        JavascriptExecutor executor = (JavascriptExecutor) getDriver();
-        executor.executeScript("arguments[0].click();", webElement);
-    }
+//    @Step("Performing a click using JavascriptExecutor")
+//    public void clickJavascriptExecutor(WebElement webElement) {
+//        JavascriptExecutor executor = (JavascriptExecutor) getDriver();
+//        executor.executeScript("arguments[0].click();", webElement);
+//    }
 }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation of page object pattern for test classes on Selenium iteration 7" />
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation of page object pattern for test classes on Selenium iteration 9" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,8 +84,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.DynamicPropertiesTests">
-    <configuration name="DynamicPropertiesTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.TestAutomationDemoQA [clean]">
+    <configuration name="RadioButtonTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -98,7 +98,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.DynamicPropertiesTests&quot;" />
+            <option value="&quot;ui.elements.RadioButtonTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -109,7 +109,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DynamicPropertiesTests.checkTextIsDisplayed" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RadioButtonTests.checkButtonNoIsUnavailableTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -122,7 +122,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.DynamicPropertiesTests.checkTextIsDisplayed&quot;" />
+            <option value="&quot;ui.elements.RadioButtonTests.checkButtonNoIsUnavailableTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -133,7 +133,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DynamicPropertiesTests.waitUntilColorChangedAndClickTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RadioButtonTests.clickButtonImpressiveAndCheckSelectedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -146,7 +146,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.DynamicPropertiesTests.waitUntilColorChangedAndClickTest&quot;" />
+            <option value="&quot;ui.elements.RadioButtonTests.clickButtonImpressiveAndCheckSelectedTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -157,7 +157,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DynamicPropertiesTests.waitUntilEnabledAndClickTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RadioButtonTests.clickButtonYesAndCheckSelectedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -170,7 +170,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.DynamicPropertiesTests.waitUntilEnabledAndClickTest&quot;" />
+            <option value="&quot;ui.elements.RadioButtonTests.clickButtonYesAndCheckSelectedTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -218,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.DynamicPropertiesTests" />
         <item itemvalue="Gradle.TestAutomationDemoQA [clean]" />
-        <item itemvalue="Gradle.DynamicPropertiesTests.waitUntilColorChangedAndClickTest" />
-        <item itemvalue="Gradle.DynamicPropertiesTests.waitUntilEnabledAndClickTest" />
-        <item itemvalue="Gradle.DynamicPropertiesTests.checkTextIsDisplayed" />
+        <item itemvalue="Gradle.RadioButtonTests" />
+        <item itemvalue="Gradle.RadioButtonTests.clickButtonYesAndCheckSelectedTest" />
+        <item itemvalue="Gradle.RadioButtonTests.clickButtonImpressiveAndCheckSelectedTest" />
+        <item itemvalue="Gradle.RadioButtonTests.checkButtonNoIsUnavailableTest" />
       </list>
     </recent_temporary>
   </component>
@@ -595,7 +595,31 @@
       <option name="project" value="LOCAL" />
       <updated>1710544615670</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="implementation of page object pattern for test classes on Selenium iteration 8">
+      <option name="closed" value="true" />
+      <created>1710794431574</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1710794431574</updated>
+    </task>
+    <task id="LOCAL-00047" summary="implementation of page object pattern for test classes on Selenium iteration 8.1">
+      <option name="closed" value="true" />
+      <created>1710794500514</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1710794500514</updated>
+    </task>
+    <task id="LOCAL-00048" summary="implementation of page object pattern for test classes on Selenium iteration 9">
+      <option name="closed" value="true" />
+      <created>1710799746636</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1710799746636</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -610,9 +634,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implementation Builder Design Pattern" />
-    <MESSAGE value="moving getters to test methods" />
-    <MESSAGE value="comparing expected and actual object" />
     <MESSAGE value="comparing expected and actual object iteration2" />
     <MESSAGE value="Stringbuilder, uploadCheck implementations" />
     <MESSAGE value="filling required fields in a separate method" />
@@ -635,6 +656,9 @@
     <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 5" />
     <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 6" />
     <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation of page object pattern for test classes on Selenium iteration 7" />
+    <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 8" />
+    <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 8.1" />
+    <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation of page object pattern for test classes on Selenium iteration 9" />
   </component>
 </project>

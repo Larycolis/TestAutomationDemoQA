@@ -1,6 +1,7 @@
 package org.page.elements;
 
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -36,6 +37,10 @@ public class LinksPage {
     }
 
     public record Result(String expectedLinkResponse, String linkResponse) {
+    }
+
+    public void assertTextOnScreen(LinksPage.Result result) {
+        Assertions.assertEquals(result.expectedLinkResponse(), driver.findElement(By.id(result.linkResponse())).getText());
     }
 
     private void clickJavascriptExecutor8(WebElement webElement) {

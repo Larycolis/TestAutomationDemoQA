@@ -1,62 +1,40 @@
 package ui.elements;
 
 import org.base.BaseTest;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.page.elements.TextboxPage;
 
 public class TextboxTests extends BaseTest {
-    private static final String USER_NAME = "userName";
-    private static final String USER_EMAIL = "userEmail";
-    private static final String CURRENT_ADDRESS = "currentAddress";
-    private static final String PERMANENT_ADDRESS = "permanentAddress";
+    private TextboxPage textboxPage;
 
     @BeforeEach
     void setUp() {
+        textboxPage = new TextboxPage(getDriver());
         getDriver().get("https://demoqa.com/text-box");
     }
 
     @ParameterizedTest
     @ValueSource(strings = {" test", "123test", "123", "i", "TEST", "$*^"})
-    void fillTheFullNameFieldAndSubmitTest(String param) {
-        JavascriptExecutor executor = getJavascriptExecutor();
-        getDriver().findElement(By.id(USER_NAME)).click();
-        getDriver().findElement(By.id(USER_NAME)).sendKeys(param);
-        executor.executeScript("arguments[0].click();", getDriver().findElement(By.id("submit")));
-        Assertions.assertEquals("Name:" + param, getDriver().findElement(By.id("name")).getText());
+    void fillTheFullNameFieldAndSubmitTest(String fullName) {
+        textboxPage.sendUserName(fullName);
+        textboxPage.clickSubmit();
+        textboxPage.assertNameTextOnTheScreen(fullName);
     }
 
-    @Test
-    void fillTheFormAndSubmitTest() {
-        String[] testDate = new String[]{"Ivan Ivanovich", "test@test.ts", "Gorkog, 1", "Lenin, 12"};
-        WebElement userName = getDriver().findElement(By.id(USER_NAME));
-        WebElement userEmail = getDriver().findElement(By.id(USER_EMAIL));
-        WebElement currentAddress = getDriver().findElement(By.id(CURRENT_ADDRESS));
-        WebElement permanentAddress = getDriver().findElement(By.id(PERMANENT_ADDRESS));
-        JavascriptExecutor executor = getJavascriptExecutor();
-        userName.click();
-        userName.sendKeys(testDate[0]);
-        userEmail.click();
-        userEmail.sendKeys(testDate[1]);
-        currentAddress.click();
-        currentAddress.sendKeys(testDate[2]);
-        permanentAddress.click();
-        permanentAddress.sendKeys(testDate[3]);
-        executor.executeScript("arguments[0].click();", getDriver().findElement(By.id("submit")));
-        Assertions.assertEquals("Name:" + testDate[0], getDriver().findElement(By.id("name")).getText());
-        Assertions.assertEquals("Email:" + testDate[1], getDriver().findElement(By.id("email")).getText());
-        Assertions.assertEquals("Current Address :" + testDate[2], getDriver().findElement(By.cssSelector("p[id='currentAddress']")).getText());
-        Assertions.assertEquals("Permananet Address :" + testDate[3], getDriver().findElement(By.cssSelector("p[id='permanentAddress']")).getText());
-    }
-
-    private JavascriptExecutor getJavascriptExecutor() {
-        JavascriptExecutor executor = (JavascriptExecutor) getDriver();
-        executor.executeScript("arguments[0].remove();", getDriver().findElement(By.id("adplus-anchor")));
-        return executor;
+    @ParameterizedTest
+    @CsvSource({"Ivan Ivanovich, test@test.ts, Gorkog 1, Lenin 12"})
+    void fillTheFormAndSubmitTest(String fullName, String email, String currentAddress, String permanentAddress) {
+        textboxPage.sendUserName(fullName);
+        textboxPage.sendEmail(email);
+        textboxPage.sendCurrentAddress(currentAddress);
+        textboxPage.sendPermanentAddress(permanentAddress);
+        textboxPage.clickSubmit();
+        textboxPage.assertNameTextOnTheScreen(fullName);
+        textboxPage.assertEmailTextOnTheScreen(email);
+        textboxPage.assertCurrentAddressTextOnTheScreen(currentAddress);
+        textboxPage.assertPermanentAddressTextOnTheScreen(permanentAddress);
     }
 }
