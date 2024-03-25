@@ -47,13 +47,13 @@ public class WebTablesPage {
     }
 
     @Step("Click on the edit button on the created employee")
-    public void clickEditButtonOnCreatedEmployee(int fullElementsCount) {
-        driver.findElement(By.cssSelector("div.rt-tbody > div:nth-child(" + fullElementsCount + ") div > div > div > span#edit-record-" + fullElementsCount)).click();
+    public void clickEditButtonOnCreatedEmployee() {
+        driver.findElement(By.cssSelector("div.rt-tbody > div:nth-child(" + getFullElementsCount() + ") div > div > div > span#edit-record-" + getFullElementsCount())).click();
     }
 
     @Step("Click on the delete button on the created employee")
-    public void clickDeleteButtonOnCreatedEmployee(int fullElementsCount) {
-        driver.findElement(By.cssSelector("div.rt-tbody > div:nth-child(" + fullElementsCount + ") div > div > div > span#delete-record-" + fullElementsCount)).click();
+    public void clickDeleteButtonOnCreatedEmployee() {
+        driver.findElement(By.cssSelector("div.rt-tbody > div:nth-child(" + getFullElementsCount() + ") div > div > div > span#delete-record-" + getFullElementsCount())).click();
     }
 
     @Step("Get size of elements list")
@@ -71,12 +71,14 @@ public class WebTablesPage {
     }
 
     @Step("Checking the list size before and after deleting an employee")
-    public void assertSizeOfListBeforeAndAfterDeleted(int fullElementCountAfterDeleteLine, int fullElementsCount) {
-        Assertions.assertEquals(fullElementCountAfterDeleteLine, fullElementsCount - 1);
+    public void assertSizeAfterDeleted() {
+        Assertions.assertEquals(2, getFullElementsCount() - 1);
     }
 
     @Step("Check availability of employee name")
-    public void assertNameOfEmployeeIsUnavailable(List<String> firstNamesAfterDelete, Employee employee) {
+    public void assertNameOfEmployeeIsUnavailable(Employee employee) {
+        int fullElementCountAfterDeleteLine = getFullElementsCount();
+        List<String> firstNamesAfterDelete = getFirstNames(fullElementCountAfterDeleteLine);
         Assertions.assertFalse(firstNamesAfterDelete.contains(employee.getFirstName()));
     }
 

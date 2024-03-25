@@ -23,6 +23,7 @@ dependencies {
     implementation group: 'com.codeborne', name: 'selenide', version: '7.1.0'
     implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
     implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.25.0'
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.4.0'
 }
 
 test {

@@ -8,8 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.page.elements.WebTablesPage;
 
-import java.util.List;
-
 import static org.util.FakerUtil.*;
 
 public class WebTablesTests extends BaseTest {
@@ -37,8 +35,7 @@ public class WebTablesTests extends BaseTest {
         Employee editedEmployee = generateEmployee();
         webTablesPage.clickAddButton();
         webTablesPage.addEmployee(employee);
-        int fullElementsCount = webTablesPage.getFullElementsCount();
-        webTablesPage.clickEditButtonOnCreatedEmployee(fullElementsCount);
+        webTablesPage.clickEditButtonOnCreatedEmployee();
         webTablesPage.addEmployee(editedEmployee);
         webTablesPage.assertExpAndActEmployee(editedEmployee);
     }
@@ -49,12 +46,9 @@ public class WebTablesTests extends BaseTest {
         Employee employee = generateEmployee();
         webTablesPage.clickAddButton();
         webTablesPage.addEmployee(employee);
-        int fullElementsCount = webTablesPage.getFullElementsCount();
-        webTablesPage.clickDeleteButtonOnCreatedEmployee(fullElementsCount);
-        int fullElementCountAfterDeleteLine = webTablesPage.getFullElementsCount();
-        List<String> firstNamesAfterDelete = webTablesPage.getFirstNames(fullElementCountAfterDeleteLine);
-        webTablesPage.assertSizeOfListBeforeAndAfterDeleted(fullElementCountAfterDeleteLine, fullElementsCount);
-        webTablesPage.assertNameOfEmployeeIsUnavailable(firstNamesAfterDelete, employee);
+        webTablesPage.clickDeleteButtonOnCreatedEmployee();
+        webTablesPage.assertSizeAfterDeleted();
+        webTablesPage.assertNameOfEmployeeIsUnavailable(employee);
     }
 
     @Step("Generate an employee using required fields")

@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation of page object pattern for test classes on Selenium iteration 9" />
+    <list default="true" id="725fa302-82db-46a9-b83d-0d6dc260ab42" name="Changes" comment="implementation of page object pattern for test classes on Selenium iteration 12">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/api/entity/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/api/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/api/AccountTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/api/BookStoreTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/page/elements/WebTablesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/page/elements/WebTablesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui/elements/WebTablesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui/elements/WebTablesTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +85,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/IDEA_projects/lenta_automation_UI&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/IDEA_projects/JavaRushTasks&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -84,8 +93,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.TestAutomationDemoQA [clean]">
-    <configuration name="RadioButtonTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.AccountTests.createAccountTest">
+    <configuration name="AccountTests.createAccountTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -98,7 +107,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.RadioButtonTests&quot;" />
+            <option value="&quot;api.AccountTests.createAccountTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -109,7 +118,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RadioButtonTests.checkButtonNoIsUnavailableTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BookStoreTests.getBookTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -122,7 +131,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.RadioButtonTests.checkButtonNoIsUnavailableTest&quot;" />
+            <option value="&quot;api.BookStoreTests.getBookTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -133,7 +142,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RadioButtonTests.clickButtonImpressiveAndCheckSelectedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MainPageTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -146,7 +155,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.RadioButtonTests.clickButtonImpressiveAndCheckSelectedTest&quot;" />
+            <option value="&quot;ui.mainPage.MainPageTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -157,7 +166,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RadioButtonTests.clickButtonYesAndCheckSelectedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MainPageTests.clickBannerImageAndCheckSeleniumTrainingPageOpenedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -170,7 +179,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui.elements.RadioButtonTests.clickButtonYesAndCheckSelectedTest&quot;" />
+            <option value="&quot;ui.mainPage.MainPageTests.clickBannerImageAndCheckSeleniumTrainingPageOpenedTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -218,11 +227,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AccountTests.createAccountTest" />
+        <item itemvalue="Gradle.BookStoreTests.getBookTest" />
+        <item itemvalue="Gradle.MainPageTests.clickBannerImageAndCheckSeleniumTrainingPageOpenedTest" />
         <item itemvalue="Gradle.TestAutomationDemoQA [clean]" />
-        <item itemvalue="Gradle.RadioButtonTests" />
-        <item itemvalue="Gradle.RadioButtonTests.clickButtonYesAndCheckSelectedTest" />
-        <item itemvalue="Gradle.RadioButtonTests.clickButtonImpressiveAndCheckSelectedTest" />
-        <item itemvalue="Gradle.RadioButtonTests.checkButtonNoIsUnavailableTest" />
+        <item itemvalue="Gradle.MainPageTests" />
       </list>
     </recent_temporary>
   </component>
@@ -234,22 +243,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705268162819</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Development of project structure and test classes">
-      <option name="closed" value="true" />
-      <created>1706909889961</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1706909889961</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Making corrections based on code review comments">
-      <option name="closed" value="true" />
-      <created>1706990935463</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1706990935463</updated>
     </task>
     <task id="LOCAL-00003" summary="Making corrections based on code review comments(2)">
       <option name="closed" value="true" />
@@ -619,7 +612,31 @@
       <option name="project" value="LOCAL" />
       <updated>1710799746636</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="implementation of page object pattern for test classes on Selenium iteration 10">
+      <option name="closed" value="true" />
+      <created>1710929487247</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1710929487247</updated>
+    </task>
+    <task id="LOCAL-00050" summary="implementation of page object pattern for test classes on Selenium iteration 11">
+      <option name="closed" value="true" />
+      <created>1710935572743</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1710935572743</updated>
+    </task>
+    <task id="LOCAL-00051" summary="implementation of page object pattern for test classes on Selenium iteration 12">
+      <option name="closed" value="true" />
+      <created>1710948796226</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1710948796226</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -634,9 +651,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="comparing expected and actual object iteration2" />
-    <MESSAGE value="Stringbuilder, uploadCheck implementations" />
-    <MESSAGE value="filling required fields in a separate method" />
     <MESSAGE value="add Lombok and dependency, add headless browser mode" />
     <MESSAGE value="Implemented Allure, accept unexpected alert behaviour, extract acceptance into a separate method in Alert page tests" />
     <MESSAGE value="Fix cssSelector value" />
@@ -659,6 +673,9 @@
     <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 8" />
     <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 8.1" />
     <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 9" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation of page object pattern for test classes on Selenium iteration 9" />
+    <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 10" />
+    <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 11" />
+    <MESSAGE value="implementation of page object pattern for test classes on Selenium iteration 12" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation of page object pattern for test classes on Selenium iteration 12" />
   </component>
 </project>
